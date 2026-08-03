@@ -1,0 +1,16 @@
+/* =======================================
+   TIENDA OFICIAL DEL SOCIO
+   Asociación Ornitológica de Navas de San Juan
+======================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
