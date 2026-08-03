@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(respuesta => respuesta.json())
         .then(productos => {
 
+            contenedor.innerHTML = "";
+
             productos.forEach(producto => {
 
                 contenedor.innerHTML += `
@@ -34,22 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     </div>
                 `;
-
-            });
-
-            // Activar botones
-            document.querySelectorAll(".btnCarrito").forEach(boton => {
-
-                boton.addEventListener("click", () => {
-
-                    agregarAlCarrito({
-                        id: Number(boton.dataset.id),
-                        nombre: boton.dataset.nombre,
-                        precio: Number(boton.dataset.precio),
-                        imagen: boton.dataset.imagen
-                    });
-
-                });
 
             });
 
