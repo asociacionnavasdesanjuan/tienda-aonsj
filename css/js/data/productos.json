@@ -1,23 +1,48 @@
-[
-  {
-    "id": 1,
-    "nombre": "Jaula de Cría",
-    "descripcion": "Jaula ideal para la cría de canarios y jilgueros.",
-    "precio": 39.95,
-    "imagen": "img/jaula.jpg"
-  },
-  {
-    "id": 2,
-    "nombre": "Comedero Exterior",
-    "descripcion": "Comedero transparente de gran capacidad.",
-    "precio": 3.50,
-    "imagen": "img/comedero.jpg"
-  },
-  {
-    "id": 3,
-    "nombre": "Bebedero",
-    "descripcion": "Bebedero automático para aves.",
-    "precio": 2.20,
-    "imagen": "img/bebedero.jpg"
-  }
-]
+document.addEventListener("DOMContentLoaded", () => {
+
+    const contenedor = document.getElementById("productos");
+
+    if (!contenedor) return;
+
+    fetch("data/productos.json")
+        .then(respuesta => respuesta.json())
+        .then(productos => {
+
+            contenedor.innerHTML = "";
+
+            productos.forEach(producto => {
+
+                contenedor.innerHTML += `
+
+                <div class="producto">
+
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+
+                    <h3>${producto.nombre}</h3>
+
+                    <p>${producto.descripcion}</p>
+
+                    <h2>${producto.precio.toFixed(2)} €</h2>
+
+                    <button>
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+                `;
+
+            });
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
+            contenedor.innerHTML =
+            "<p>No se han podido cargar los productos.</p>";
+
+        });
+
+});
