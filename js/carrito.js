@@ -1,41 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
+// =============================================
+// CARRITO DE LA TIENDA
+// Asociación Ornitológica de Navas de San Juan
+// =============================================
 
-    let carrito = [];
+// Número de WhatsApp
+const TELEFONO_WHATSAPP = "34640868527";
 
-    const botonCarrito = document.getElementById("botonCarrito");
-    const panelCarrito = document.getElementById("carrito");
-    const cerrarCarrito = document.getElementById("cerrarCarrito");
-    const contador = document.getElementById("contador");
-    const listaCarrito = document.getElementById("listaCarrito");
-    const totalCarrito = document.getElementById("totalCarrito");
-    const btnWhatsapp = document.getElementById("btnWhatsapp");
+// Cargar carrito guardado
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    function actualizarCarrito() {
+// Elementos de la página
+const botonCarrito = document.getElementById("botonCarrito");
+const panelCarrito = document.getElementById("carrito");
+const cerrarCarrito = document.getElementById("cerrarCarrito");
 
-        contador.textContent = carrito.length;
-        listaCarrito.innerHTML = "";
-        totalCarrito.textContent = "0.00 €";
+const listaCarrito = document.getElementById("listaCarrito");
+const contador = document.getElementById("contador");
+const totalCarrito = document.getElementById("totalCarrito");
+const btnWhatsapp = document.getElementById("btnWhatsapp");
 
-    }
+// Guardar carrito
+function guardarCarrito() {
 
-    botonCarrito.addEventListener("click", () => {
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
 
-        panelCarrito.classList.add("abierto");
-
-    });
-
-    cerrarCarrito.addEventListener("click", () => {
-
-        panelCarrito.classList.remove("abierto");
-
-    });
-
-    btnWhatsapp.addEventListener("click", () => {
-
-        alert("WhatsApp se configurará en el siguiente paso.");
-
-    });
-
-    actualizarCarrito();
-
-});
+}
