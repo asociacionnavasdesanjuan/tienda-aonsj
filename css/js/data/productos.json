@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Jaula de Cría",
+    "descripcion": "Jaula ideal para la cría de canarios y jilgueros.",
+    "precio": 39.95,
+    "imagen": "img/jaula.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Comedero Exterior",
+    "descripcion": "Comedero transparente de gran capacidad.",
+    "precio": 3.50,
+    "imagen": "img/comedero.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Bebedero",
+    "descripcion": "Bebedero automático para aves.",
+    "precio": 2.20,
+    "imagen": "img/bebedero.jpg"
+  }
+]
