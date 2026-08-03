@@ -23,10 +23,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         <br><br>
 
-                        <button>Añadir al carrito</button>
+                        <button
+                            class="btnCarrito"
+                            data-id="${producto.id}"
+                            data-nombre="${producto.nombre}"
+                            data-precio="${producto.precio}"
+                            data-imagen="${producto.imagen}">
+                            Añadir al carrito
+                        </button>
 
                     </div>
                 `;
+
+            });
+
+            // Activar botones
+            document.querySelectorAll(".btnCarrito").forEach(boton => {
+
+                boton.addEventListener("click", () => {
+
+                    agregarAlCarrito({
+                        id: Number(boton.dataset.id),
+                        nombre: boton.dataset.nombre,
+                        precio: Number(boton.dataset.precio),
+                        imagen: boton.dataset.imagen
+                    });
+
+                });
 
             });
 
