@@ -26,13 +26,21 @@ function guardarCarrito(){
 
 //======================================
 
-botonCarrito.addEventListener("click",()=>{
-    panelCarrito.classList.add("abierto");
-});
+if (botonCarrito && panelCarrito) {
 
-cerrarCarrito.addEventListener("click",()=>{
-    panelCarrito.classList.remove("abierto");
-});
+    botonCarrito.addEventListener("click", () => {
+        panelCarrito.classList.add("abierto");
+    });
+
+}
+
+if (cerrarCarrito && panelCarrito) {
+
+    cerrarCarrito.addEventListener("click", () => {
+        panelCarrito.classList.remove("abierto");
+    });
+
+}
 
 //======================================
 
