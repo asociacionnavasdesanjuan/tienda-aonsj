@@ -72,7 +72,9 @@ function agregarAlCarrito(producto){
 //======================================
 
 function actualizarCarrito(){
-
+if (!listaCarrito || !contador || !totalCarrito) {
+    return;
+}
     listaCarrito.innerHTML="";
 
     let total=0;
