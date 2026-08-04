@@ -261,9 +261,25 @@ cursor:pointer;
 
 .fotoCarrito{
 
-    width:70px;
+    width:80px;
 
-    height:70px;
+    height:80px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:10px auto;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    padding:5px;
+
+}
 
     object-fit:cover;
 
