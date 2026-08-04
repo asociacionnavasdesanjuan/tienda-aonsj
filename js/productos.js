@@ -14,10 +14,10 @@ const modalComprar = document.getElementById("modalComprar");
    fetch("data/productos.json")
         .then(respuesta => respuesta.json())
         .then(productos => {
-
+let listaProductos = productos;
             contenedor.innerHTML = "";
 
-            productos.forEach(producto => {
+           listaProductos.forEach(producto => {
 
                 contenedor.innerHTML += `
                    <div class="producto">
@@ -106,6 +106,28 @@ window.addEventListener("click", (e) => {
         modal.style.display = "none";
 
     }
+// ==========================
+// BUSCADOR
+// ==========================
 
+buscador.addEventListener("keyup", () => {
+
+    const texto = buscador.value.toLowerCase();
+
+    document.querySelectorAll(".producto").forEach(producto => {
+
+        if (producto.innerText.toLowerCase().includes(texto)) {
+
+            producto.style.display = "";
+
+        } else {
+
+            producto.style.display = "none";
+
+        }
+
+    });
+
+});
 });
 });
