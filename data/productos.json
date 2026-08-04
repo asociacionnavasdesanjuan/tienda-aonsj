@@ -5,6 +5,7 @@
     "categoria": "Jaulas",
     "descripcion": "Jaula de cría de 60 cm con separador central.",
     "precio": 38.00,
+     "stock": 12,
     "imagen": "imagenes/jaula cria rsl 60cm.webp",
     "nuevo": true,
     "oferta": false
@@ -15,6 +16,7 @@
     "categoria": "Comederos",
     "descripcion": "Comedero transparente de gran capacidad.",
     "precio": 0.40,
+     "stock": 12,
     "imagen": "imagenes/comedero exterior tapa roja.webp",
     "nuevo": false,
     "oferta": true
@@ -25,6 +27,7 @@
     "categoria": "Bebederos",
     "descripcion": "Bebedero automático de 225 ml.",
     "precio": 0.70,
+     "stock": 12,
     "imagen": "imagenes/bebedero 225ml transparente.jpg",
     "nuevo": true,
     "oferta": false
