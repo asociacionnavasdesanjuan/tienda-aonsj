@@ -64,7 +64,72 @@ if(cerrarCarrito){
 // ACTUALIZAR CARRITO
 // =============================================
 
-function actualizarCarrito(){
+// =============================================
+// ACTUALIZAR CARRITO
+// =============================================
+
+function actualizarCarrito() {
+
+    if (!listaCarrito) return;
+
+    listaCarrito.innerHTML = "";
+
+    let total = 0;
+    let totalArticulos = 0;
+
+    if (carrito.length === 0) {
+
+        contador.textContent = "0";
+        totalCarrito.textContent = "0.00 €";
+
+        listaCarrito.innerHTML = `
+            <p style="text-align:center;">
+                Tu carrito está vacío.
+            </p>
+        `;
+
+        return;
+
+    }
+
+    carrito.forEach(producto => {
+
+        total += producto.precio * producto.cantidad;
+        totalArticulos += producto.cantidad;
+
+        listaCarrito.innerHTML += `
+
+        <div class="itemCarrito">
+
+            <h4>${producto.nombre}</h4>
+
+            <p>
+
+                ${producto.precio.toFixed(2)} €
+
+            </p>
+
+            <p>
+
+                Cantidad:
+
+                <strong>${producto.cantidad}</strong>
+
+            </p>
+
+            <hr>
+
+        </div>
+
+        `;
+
+    });
+
+    contador.textContent = totalArticulos;
+
+    totalCarrito.textContent = total.toFixed(2) + " €";
+
+}
 
     if(!listaCarrito) return;
 
