@@ -51,3 +51,34 @@ cerrarCarrito.addEventListener("click",()=>{
     panelCarrito.classList.remove("abierto");
 
 });
+// ======================================
+// AÑADIR PRODUCTO
+// ======================================
+
+function agregarAlCarrito(producto){
+
+    const existe = carrito.find(item => item.id === producto.id);
+
+    if(existe){
+
+        existe.cantidad++;
+
+    }else{
+
+        carrito.push({
+
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagen: producto.imagen,
+            cantidad: 1
+
+        });
+
+    }
+
+    guardarCarrito();
+
+    console.log(carrito);
+
+}
