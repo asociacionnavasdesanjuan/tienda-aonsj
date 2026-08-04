@@ -28,3 +28,38 @@ function guardarCarrito() {
     );
 
 }
+// =============================================
+// AÑADIR PRODUCTO AL CARRITO
+// =============================================
+
+function agregarAlCarrito(producto) {
+
+    const existe = carrito.find(item => item.id === producto.id);
+
+    if (existe) {
+
+        existe.cantidad++;
+
+    } else {
+
+        carrito.push({
+
+            id: producto.id,
+
+            nombre: producto.nombre,
+
+            precio: producto.precio,
+
+            imagen: producto.imagen,
+
+            cantidad: 1
+
+        });
+
+    }
+
+    guardarCarrito();
+
+    actualizarCarrito();
+
+}
