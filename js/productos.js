@@ -92,6 +92,8 @@ document.querySelectorAll(".btnCarrito").forEach(boton => {
 
     boton.addEventListener("click", () => {
 
+        console.log("BOTÓN PULSADO");
+
         agregarAlCarrito({
 
             id: Number(boton.dataset.id),
