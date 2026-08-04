@@ -136,3 +136,8 @@ function actualizarCarrito(){
     totalCarrito.textContent=total.toFixed(2)+" €";
 
 }
+// ======================================
+// INICIAR
+// ======================================
+
+actualizarCarrito();
