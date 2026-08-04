@@ -1,249 +1,64 @@
-// ======================================
-// CARRITO DE LA TIENDA
-// Asociación Ornitológica de Navas de San Juan
-// ======================================
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Oficial del Socio</title>
 
-const TELEFONO_WHATSAPP = "34640868527";
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+<body>
 
-// ELEMENTOS
-const botonCarrito = document.getElementById("botonCarrito");
-const panelCarrito = document.getElementById("carrito");
-const cerrarCarrito = document.getElementById("cerrarCarrito");
+<header>
 
-const listaCarrito = document.getElementById("listaCarrito");
-const contador = document.getElementById("contador");
-const totalCarrito = document.getElementById("totalCarrito");
-const btnWhatsapp = document.getElementById("btnWhatsapp");
-const vaciarCarrito = document.getElementById("vaciarCarrito");
+    <img src="LOGO.png" alt="Logo Asociación" class="logo">
 
-//======================================
+    <h1>Asociación Ornitológica de Navas de San Juan</h1>
 
-function guardarCarrito(){
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
+    <p>Tienda Oficial del Socio</p>
 
-//======================================
+    <nav>
 
-botonCarrito.addEventListener("click",()=>{
-    panelCarrito.classList.add("abierto");
-});
+        <a href="index.html">Inicio</a>
 
-cerrarCarrito.addEventListener("click",()=>{
-    panelCarrito.classList.remove("abierto");
-});
+        <a href="tienda.html" class="activo">Tienda</a>
 
-//======================================
+        <a href="contacto.html">Contacto</a>
 
-function agregarAlCarrito(producto){
+        <a href="carrito.html">🛒 Carrito</a>
 
-    const existe=carrito.find(p=>p.id===producto.id);
+    </nav>
 
-    if(existe){
-        existe.cantidad++;
-    }else{
+</header>
 
-        carrito.push({
+<main>
 
-            id:producto.id,
-            nombre:producto.nombre,
-            precio:producto.precio,
-            imagen:producto.imagen,
-            cantidad:1
+    <section class="titulo">
 
-        });
+        <h2>Nuestros Productos</h2>
 
-    }
+        <p>
+            Material oficial de la Asociación y artículos para criadores.
+        </p>
 
-    guardarCarrito();
-    actualizarCarrito();
+    </section>
 
-}
+    <section id="contenedorProductos" class="productos">
 
-//======================================
+        <!-- Aquí aparecerán automáticamente los productos -->
 
-function actualizarCarrito(){
+    </section>
 
-    listaCarrito.innerHTML="";
+</main>
 
-    let total=0;
-    let totalArticulos=0;
+<footer>
 
-    if(carrito.length===0){
+    © 2026 Asociación Ornitológica de Navas de San Juan
 
-        contador.textContent="0";
-        totalCarrito.textContent="0.00 €";
-        listaCarrito.innerHTML="<p>Tu carrito está vacío.</p>";
-        return;
+</footer>
 
-    }
+<script src="js/productos.js"></script>
 
-    carrito.forEach(producto=>{
-
-        total+=producto.precio*producto.cantidad;
-        totalArticulos+=producto.cantidad;
-
-        listaCarrito.innerHTML+=`
-
-<div class="itemCarrito">
-
-<div class="fotoProducto">
-<img src="${producto.imagen}" class="fotoCarrito">
-</div>
-
-<h4>${producto.nombre}</h4>
-
-<div class="cantidad">
-
-<button class="menos" data-id="${producto.id}">➖</button>
-
-<strong>${producto.cantidad}</strong>
-
-<button class="mas" data-id="${producto.id}">➕</button>
-
-</div>
-
-<p>Precio: ${producto.precio.toFixed(2)} €</p>
-
-<p><strong>Subtotal:
-${(producto.precio*producto.cantidad).toFixed(2)} €
-</strong></p>
-
-<button class="eliminar" data-id="${producto.id}">
-🗑 Eliminar
-</button>
-
-</div>
-
-`;
-
-    });
-
-    contador.textContent=totalArticulos;
-    totalCarrito.textContent=total.toFixed(2)+" €";
-
-    // MÁS
-
-    document.querySelectorAll(".mas").forEach(boton=>{
-
-        boton.onclick=()=>{
-
-            const id=Number(boton.dataset.id);
-
-            const producto=carrito.find(p=>p.id===id);
-
-            producto.cantidad++;
-
-            guardarCarrito();
-
-            actualizarCarrito();
-
-        }
-
-    });
-
-    // MENOS
-
-    document.querySelectorAll(".menos").forEach(boton=>{
-
-        boton.onclick=()=>{
-
-            const id=Number(boton.dataset.id);
-
-            const producto=carrito.find(p=>p.id===id);
-
-            producto.cantidad--;
-
-            if(producto.cantidad<=0){
-
-                carrito=carrito.filter(p=>p.id!==id);
-
-            }
-
-            guardarCarrito();
-
-            actualizarCarrito();
-
-        }
-
-    });
-
-    // ELIMINAR
-
-    document.querySelectorAll(".eliminar").forEach(boton=>{
-
-        boton.onclick=()=>{
-
-            const id=Number(boton.dataset.id);
-
-            carrito=carrito.filter(p=>p.id!==id);
-
-            guardarCarrito();
-
-            actualizarCarrito();
-
-        }
-
-    });
-
-}
-
-//======================================
-// VACIAR CARRITO
-//======================================
-
-if(vaciarCarrito){
-
-    vaciarCarrito.onclick=()=>{
-
-        if(confirm("¿Vaciar todo el carrito?")){
-
-            carrito=[];
-
-            guardarCarrito();
-
-            actualizarCarrito();
-
-        }
-
-    }
-
-}
-
-//======================================
-// WHATSAPP
-//======================================
-
-if(btnWhatsapp){
-
-    btnWhatsapp.onclick=()=>{
-
-        if(carrito.length===0){
-
-            alert("El carrito está vacío.");
-
-            return;
-
-        }
-
-        let mensaje="*PEDIDO TIENDA AONSJ*%0A%0A";
-
-        carrito.forEach(producto=>{
-
-            mensaje+=`${producto.nombre} x${producto.cantidad}%0A`;
-
-        });
-
-        mensaje+=`%0ATotal: ${totalCarrito.textContent}`;
-
-        window.open(
-            `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
-            "_blank"
-        );
-
-    }
-
-}
-
-actualizarCarrito();
+</body>
+</html>
