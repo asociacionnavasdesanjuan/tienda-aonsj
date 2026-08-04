@@ -2,6 +2,7 @@
   {
   "id":1,
   "nombre":"Comedero Exterior",
+  "categoria": "Comederos",
   "descripcion":"...",
   "precio":3.50,
   "imagen":"LOGO.png",
@@ -11,6 +12,7 @@
  {
   "id": 2,
   "nombre": "Comedero Exterior",
+   "categoria": "Comederos",
   "descripcion": "Comedero transparente de gran capacidad.",
   "precio": 3.50,
   "imagen": "LOGO.png",
@@ -20,6 +22,7 @@
  {
   "id": 3,
   "nombre": "Bebedero",
+   "categoria": "Bebederos",
   "descripcion": "Bebedero automático.",
   "precio": 2.20,
   "imagen": "LOGO.png",
