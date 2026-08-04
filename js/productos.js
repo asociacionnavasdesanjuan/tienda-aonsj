@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const contenedor = document.getElementById("contenedorProductos");
+  const contenedor = document.getElementById("productos"); 
 
     if (!contenedor) return;
 
