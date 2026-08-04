@@ -20,7 +20,11 @@ const modalComprar = document.getElementById("modalComprar");
             productos.forEach(producto => {
 
                 contenedor.innerHTML += `
-                    <div class="producto">
+                   <div class="producto">
+
+    ${producto.nuevo ? '<div class="etiqueta nuevo">NUEVO</div>' : ''}
+
+    ${producto.oferta ? '<div class="etiqueta oferta">OFERTA</div>' : ''} 
 
                         <img src="${producto.imagen}" alt="${producto.nombre}" width="200">
 
