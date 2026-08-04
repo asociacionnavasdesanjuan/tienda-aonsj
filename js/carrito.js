@@ -78,7 +78,7 @@ function agregarAlCarrito(producto){
     }
 
     guardarCarrito();
-
+actualizarCarrito();
     console.log(carrito);
 
 }
