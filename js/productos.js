@@ -1,85 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const contenedor = document.getElementById("productos"); 
-const buscador = document.getElementById("buscarProducto");
+    const contenedor = document.getElementById("productos");
+    const buscador = document.getElementById("buscarProducto");
+
     if (!contenedor) return;
 
+    let listaProductos = [];
+
+    // ==========================
+    // CARGAR PRODUCTOS
+    // ==========================
+
     fetch("data/productos.json")
-    .then(respuesta => {
-        console.log("Respuesta:", respuesta.status);
-        return respuesta.json();
-    })
-    .then(productos => {
+        .then(respuesta => respuesta.json())
+        .then(productos => {
 
-        console.log("Productos cargados:", productos);
+            listaProductos = productos;
 
+            mostrarProductos(listaProductos);
 
-            contenedor.innerHTML = "";
+            // ==========================
+            // BUSCADOR
+            // ==========================
 
-           let listaProductos = productos;
+            if (buscador) {
 
-mostrarProductos(listaProductos);
+                buscador.addEventListener("keyup", () => {
 
-                contenedor.innerHTML += `
-                    <div class="producto">
+                    const texto = buscador.value.toLowerCase();
 
-                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                    const filtrados = listaProductos.filter(producto =>
 
-                        <h3>${producto.nombre}</h3>
+                        producto.nombre.toLowerCase().includes(texto) ||
 
-                        <p>${producto.descripcion}</p>
+                        producto.descripcion.toLowerCase().includes(texto)
 
-                        <strong>${producto.precio.toFixed(2)} €</strong>
+                    );
 
-                        <button
-                            class="btnCarrito"
-                            data-id="${producto.id}"
-                            data-nombre="${producto.nombre}"
-                            data-precio="${producto.precio}"
-                            data-imagen="${producto.imagen}">
-                            Añadir al carrito
-                        </button>
+                    mostrarProductos(filtrados);
 
-                    </div>
-                `;
+                });
 
-            });
-
-            activarBotones();
+            }
 
         })
-        .catch(error => {
 
-            console.error("Error cargando productos:", error);
-
-        });
-
-});
+        .catch(error => console.error(error));
 
 
-function activarBotones() {
 
-    const botones = document.querySelectorAll(".btnCarrito");
+    // ==========================
+    // MOSTRAR PRODUCTOS
+    // ==========================
 
-    botones.forEach(boton => {
+    function mostrarProductos(productos) {
 
-        boton.addEventListener("click", () => {
+        contenedor.innerHTML = "";
 
-            alert("Producto añadido al carrito (lo conectaremos en el siguiente bloque).");
+        productos.forEach(producto => {
 
-        });
+            contenedor.innerHTML += `
 
-    });
-
-}
-function mostrarProductos(listaProductos){
-
-    contenedor.innerHTML = "";
-
-    listaProductos.forEach(producto=>{
-
-        contenedor.innerHTML += `
             <div class="producto">
+
+                ${producto.nuevo ? '<div class="etiqueta nuevo">NUEVO</div>' : ''}
+
+                ${producto.oferta ? '<div class="etiqueta oferta">OFERTA</div>' : ''}
 
                 <img src="${producto.imagen}" alt="${producto.nombre}">
 
@@ -89,35 +75,18 @@ function mostrarProductos(listaProductos){
 
                 <strong>${producto.precio.toFixed(2)} €</strong>
 
-                <button
-                    class="btnCarrito"
-                    data-id="${producto.id}"
-                    data-nombre="${producto.nombre}"
-                    data-precio="${producto.precio}"
-                    data-imagen="${producto.imagen}">
+                <button class="btnCarrito">
+
                     Añadir al carrito
+
                 </button>
 
             </div>
-        `;
 
-    });
+            `;
 
-    activarBotones();
+        });
 
-}
-buscador.addEventListener("keyup", ()=>{
-
-    const texto = buscador.value.toLowerCase();
-
-    const filtrados = listaProductos.filter(producto =>
-
-        producto.nombre.toLowerCase().includes(texto) ||
-
-        producto.descripcion.toLowerCase().includes(texto)
-
-    );
-
-    mostrarProductos(filtrados);
+    }
 
 });
