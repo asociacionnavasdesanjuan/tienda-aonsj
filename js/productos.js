@@ -3,7 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById("productos");
 
     if (!contenedor) return;
+const modal = document.getElementById("modalProducto");
+const cerrarModal = document.getElementById("cerrarModal");
 
+const modalImagen = document.getElementById("modalImagen");
+const modalNombre = document.getElementById("modalNombre");
+const modalDescripcion = document.getElementById("modalDescripcion");
+const modalPrecio = document.getElementById("modalPrecio");
+const modalComprar = document.getElementById("modalComprar");
     fetch("data/productos.json")
         .then(respuesta => respuesta.json())
         .then(productos => {
@@ -25,12 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         <br><br>
 
-                        <button
-                            class="btnCarrito"
-                            data-id="${producto.id}"
-                            data-nombre="${producto.nombre}"
-                            data-precio="${producto.precio}"
-                            data-imagen="${producto.imagen}">
+                       <button
+    class="btnCarrito"
+    data-id="${producto.id}"
+    data-nombre="${producto.nombre}"
+    data-descripcion="${producto.descripcion}"
+    data-precio="${producto.precio}"
+    data-imagen="${producto.imagen}">
                             Añadir al carrito
                         </button>
 
@@ -47,22 +55,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
             botones.forEach(boton => {
 
-                boton.addEventListener("click", () => {
+            boton.addEventListener("click", () => {
 
-                    agregarAlCarrito({
+    modal.style.display = "flex";
 
-                        id: Number(boton.dataset.id),
+    modalImagen.src = boton.dataset.imagen;
+    modalNombre.textContent = boton.dataset.nombre;
+    modalDescripcion.textContent = boton.dataset.descripcion;
+    modalPrecio.textContent = boton.dataset.precio + " €";
 
-                        nombre: boton.dataset.nombre,
+    modalComprar.onclick = () => {
 
-                        precio: Number(boton.dataset.precio),
+        agregarAlCarrito({
 
-                        imagen: boton.dataset.imagen
+            id: Number(boton.dataset.id),
+            nombre: boton.dataset.nombre,
+            precio: Number(boton.dataset.precio),
+            imagen: boton.dataset.imagen
 
-                    });
+        });
 
-                });
+        modal.style.display = "none";
 
+    };
+
+});
             });
 
         })
@@ -72,5 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error(error);
 
         });
+cerrarModal.addEventListener("click", () => {
 
+    modal.style.display = "none";
+
+});
+
+window.addEventListener("click", (e) => {
+
+    if (e.target === modal) {
+
+        modal.style.display = "none";
+
+    }
+
+});
 });
