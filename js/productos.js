@@ -88,7 +88,22 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
         });
+document.querySelectorAll(".btnCarrito").forEach(boton => {
 
+    boton.addEventListener("click", () => {
+
+        agregarAlCarrito({
+
+            id: Number(boton.dataset.id),
+            nombre: boton.dataset.nombre,
+            precio: Number(boton.dataset.precio),
+            imagen: boton.dataset.imagen
+
+        });
+
+    });
+
+});
     }
 
 });
