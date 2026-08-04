@@ -119,7 +119,11 @@ function actualizarCarrito(){
 
 <div class="fotoProducto">
 
+   <div class="fotoProducto">
+
     <img src="${producto.imagen}" class="fotoCarrito">
+
+</div>
 
 </div>
 
