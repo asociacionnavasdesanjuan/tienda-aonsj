@@ -832,3 +832,22 @@ CATEGORÍAS
     color:#ffffff;
 
 }
+#nombreCliente,
+#telefonoCliente,
+#observaciones{
+
+    width:100%;
+    margin-bottom:10px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+
+}
+
+#observaciones{
+
+    height:80px;
+    resize:vertical;
+
+}
