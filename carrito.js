@@ -4,6 +4,7 @@
   "nombre":"Comedero Exterior",
   "descripcion":"...",
   "precio":3.50,
+  "stock": 12,
   "imagen":"LOGO.png",
   "nuevo":true,
   "oferta":false
@@ -13,6 +14,7 @@
   "nombre": "Comedero Exterior",
   "descripcion": "Comedero transparente de gran capacidad.",
   "precio": 3.50,
+  "stock": 12,  
   "imagen": "LOGO.png",
   "nuevo": false,
   "oferta": true
@@ -22,6 +24,7 @@
   "nombre": "Bebedero",
   "descripcion": "Bebedero automático.",
   "precio": 2.20,
+  "stock": 12,
   "imagen": "LOGO.png",
   "nuevo": true,
   "oferta": false
