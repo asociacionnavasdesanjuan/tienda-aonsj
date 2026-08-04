@@ -81,14 +81,26 @@ console.log("PRODUCTOS CARGADOS");
             : `🔴 Agotado`
     }
 </p>
-           <button
+${
+    producto.stock > 0
+    ?
+`
+<button
     class="btnCarrito"
     data-id="${producto.id}"
     data-nombre="${producto.nombre}"
     data-precio="${producto.precio}"
     data-imagen="${producto.imagen}">
-    Añadir al carrito
+    🛒 Añadir al carrito
 </button>
+`
+    :
+`
+<button disabled class="agotado">
+    ❌ AGOTADO
+</button>
+`
+}
             </div>
 
             `;
