@@ -137,7 +137,19 @@ ${producto.cantidad}
 
 </p>
 
-<p>${producto.precio.toFixed(2)} €</p>
+<p>Precio: ${producto.precio.toFixed(2)} €</p>
+
+<p>
+
+<strong>
+
+Subtotal:
+
+${(producto.precio * producto.cantidad).toFixed(2)} €
+
+</strong>
+
+</p>
 
 <button class="eliminar" data-id="${producto.id}">
 🗑 Eliminar
