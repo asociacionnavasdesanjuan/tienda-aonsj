@@ -646,3 +646,134 @@ ETIQUETAS
     box-shadow:0 0 12px rgba(47,133,90,.4);
 
 }
+/* ==========================================
+   BLOQUE 2 - DISEÑO PROFESIONAL
+========================================== */
+
+header{
+    background:linear-gradient(135deg,#1f6b37,#2d8b57);
+    color:white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,.20);
+}
+
+header h1{
+    font-size:38px;
+    margin-top:10px;
+}
+
+header p{
+    font-size:20px;
+    opacity:.95;
+}
+
+nav{
+    margin-top:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+    font-size:18px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#FFD700;
+}
+
+main{
+    max-width:1400px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.titulo h2{
+    font-size:42px;
+    color:#1f6b37;
+}
+
+.titulo p{
+    color:#666;
+    font-size:20px;
+    margin-top:10px;
+}
+
+#productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.producto{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.35s;
+    padding:25px;
+}
+
+.producto:hover{
+    transform:translateY(-10px);
+}
+
+.producto img{
+    width:220px;
+    height:220px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+}
+
+.producto h3{
+    text-align:center;
+    margin:20px 0 10px;
+    color:#1f6b37;
+}
+
+.producto p{
+    text-align:center;
+    color:#666;
+}
+
+.producto strong{
+    display:block;
+    text-align:center;
+    font-size:26px;
+    color:#000;
+    margin:18px 0;
+}
+
+.btnCarrito{
+    width:100%;
+    background:#1f6b37;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btnCarrito:hover{
+    background:#14522a;
+}
+
+footer{
+    margin-top:60px;
+    background:#1f6b37;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
