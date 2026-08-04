@@ -106,3 +106,18 @@ function mostrarProductos(listaProductos){
     activarBotones();
 
 }
+buscador.addEventListener("keyup", ()=>{
+
+    const texto = buscador.value.toLowerCase();
+
+    const filtrados = listaProductos.filter(producto =>
+
+        producto.nombre.toLowerCase().includes(texto) ||
+
+        producto.descripcion.toLowerCase().includes(texto)
+
+    );
+
+    mostrarProductos(filtrados);
+
+});
