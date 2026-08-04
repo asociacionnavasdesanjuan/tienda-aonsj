@@ -39,6 +39,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
+            // =====================================
+            // ACTIVAR BOTONES DEL CARRITO
+            // =====================================
+
+            const botones = document.querySelectorAll(".btnCarrito");
+
+            botones.forEach(boton => {
+
+                boton.addEventListener("click", () => {
+
+                    agregarAlCarrito({
+
+                        id: Number(boton.dataset.id),
+
+                        nombre: boton.dataset.nombre,
+
+                        precio: Number(boton.dataset.precio),
+
+                        imagen: boton.dataset.imagen
+
+                    });
+
+                });
+
+            });
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
         });
 
 });
