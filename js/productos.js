@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 <input
-    type="text"
-    id="buscarProducto"
-    placeholder="🔍 Buscar productos...">
+   
     const contenedor = document.getElementById("productos");
 
     if (!contenedor) return;
