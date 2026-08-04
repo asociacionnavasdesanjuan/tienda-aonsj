@@ -119,7 +119,17 @@ function actualizarCarrito(){
 
           <h4>${producto.nombre}</h4>
 
-<p>Cantidad: ${producto.cantidad}</p>
+<p>
+
+<button class="menos" data-id="${producto.id}">➖</button>
+
+<strong style="margin:0 10px;">
+${producto.cantidad}
+</strong>
+
+<button class="mas" data-id="${producto.id}">➕</button>
+
+</p>
 
 <p>${producto.precio.toFixed(2)} €</p>
 
