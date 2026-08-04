@@ -75,12 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 <strong>${producto.precio.toFixed(2)} €</strong>
 
-                <button class="btnCarrito">
-
-                    Añadir al carrito
-
-                </button>
-
+           <button
+    class="btnCarrito"
+    data-id="${producto.id}"
+    data-nombre="${producto.nombre}"
+    data-precio="${producto.precio}"
+    data-imagen="${producto.imagen}">
+    Añadir al carrito
+</button>
             </div>
 
             `;
