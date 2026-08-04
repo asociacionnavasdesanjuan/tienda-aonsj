@@ -399,3 +399,30 @@ TARJETAS DEL CARRITO
     background:#1f6b42;
 
 }
+.eliminar{
+
+    width:100%;
+
+    padding:10px;
+
+    background:#c0392b;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    font-weight:bold;
+
+}
+
+.eliminar:hover{
+
+    background:#992d22;
+
+}
