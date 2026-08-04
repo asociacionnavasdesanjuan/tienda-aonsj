@@ -4,7 +4,7 @@
   "nombre":"Comedero Exterior",
   "descripcion":"...",
   "precio":3.50,
-  "imagen":"LOGO.png"
+  "imagen":"LOGO.png",
   "nuevo":true,
   "oferta":false
 },
