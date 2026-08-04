@@ -236,10 +236,24 @@ if(btnWhatsapp){
             return;
 
         }
-
+const nombre = document.getElementById("nombreCliente").value;
+const telefono = document.getElementById("telefonoCliente").value;
+const observaciones = document.getElementById("observaciones").value;
         let mensaje = "🟢 *PEDIDO TIENDA OFICIAL AONSJ*%0A";
 mensaje += "━━━━━━━━━━━━━━━━━━%0A%0A";
+mensaje += "👤 *DATOS DEL CLIENTE*%0A";
 
+mensaje += "Nombre: " + nombre + "%0A";
+
+mensaje += "Teléfono: " + telefono + "%0A";
+
+if (observaciones !== "") {
+
+    mensaje += "Observaciones: " + observaciones + "%0A";
+
+}
+
+mensaje += "%0A━━━━━━━━━━━━━━━━━━%0A%0A";
 carrito.forEach(producto => {
 
     mensaje += "📦 *" + producto.nombre + "*%0A";
