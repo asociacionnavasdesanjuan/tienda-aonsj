@@ -11,7 +11,7 @@ const modalNombre = document.getElementById("modalNombre");
 const modalDescripcion = document.getElementById("modalDescripcion");
 const modalPrecio = document.getElementById("modalPrecio");
 const modalComprar = document.getElementById("modalComprar");
-    fetch("data/productos.json")
+   fetch("data/productos.json")
         .then(respuesta => respuesta.json())
         .then(productos => {
 
