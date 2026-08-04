@@ -426,3 +426,34 @@ TARJETAS DEL CARRITO
     background:#992d22;
 
 }
+#btnWhatsapp{
+
+    width:100%;
+
+    padding:15px;
+
+    background:#25D366;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnWhatsapp:hover{
+
+    background:#1faa52;
+
+    transform:scale(1.02);
+
+}
