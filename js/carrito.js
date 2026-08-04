@@ -117,7 +117,9 @@ function actualizarCarrito(){
 
         <div class="itemCarrito">
 
-          <h4>${producto.nombre}</h4>
+<img src="${producto.imagen}" class="fotoCarrito">
+
+<h4>${producto.nombre}</h4>
 
 <p>
 
