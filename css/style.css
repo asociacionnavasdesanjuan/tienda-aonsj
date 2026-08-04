@@ -290,3 +290,34 @@ cursor:pointer;
     margin:0 auto 10px;
 
 }
+/* =====================================
+   FOTO DEL PRODUCTO EN EL CARRITO
+===================================== */
+
+.fotoProducto{
+
+    text-align:center;
+
+}
+
+.fotoCarrito{
+
+    width:80px;
+
+    height:80px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:10px auto;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+    background:#fff;
+
+    padding:5px;
+
+}
