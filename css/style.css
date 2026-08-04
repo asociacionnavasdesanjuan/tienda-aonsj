@@ -370,3 +370,32 @@ TARJETAS DEL CARRITO
     margin-top:12px;
 
 }
+.menos,
+.mas{
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2e8b57;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.menos:hover,
+.mas:hover{
+
+    background:#1f6b42;
+
+}
