@@ -1,5 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+// ===============================
+// SOCIO CONECTADO
+// ===============================
 
+const socio = JSON.parse(localStorage.getItem("socio"));
+
+if (!socio) {
+
+    window.location.href = "login.html";
+    return;
+
+}
+
+const bienvenida = document.getElementById("bienvenidaSocio");
+
+if (bienvenida) {
+
+    bienvenida.innerHTML = `
+        👤 Bienvenido, <strong>${socio.nombre}</strong><br>
+        Nº de socio: ${socio.numero}
+    `;
+
+}
     const contenedor = document.getElementById("productos");
     const buscador = document.getElementById("buscarProducto");
 
