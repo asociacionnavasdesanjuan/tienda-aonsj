@@ -5,8 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!contenedor) return;
 
     fetch("data/productos.json")
-        .then(respuesta => respuesta.json())
-        .then(productos => {
+    .then(respuesta => {
+        console.log("Respuesta:", respuesta.status);
+        return respuesta.json();
+    })
+    .then(productos => {
+
+        console.log("Productos cargados:", productos);
+
 
             contenedor.innerHTML = "";
 
