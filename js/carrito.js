@@ -237,15 +237,20 @@ if(btnWhatsapp){
 
         }
 
-        let mensaje="*PEDIDO TIENDA AONSJ*%0A%0A";
+        let mensaje = "🟢 *PEDIDO TIENDA OFICIAL AONSJ*%0A";
+mensaje += "━━━━━━━━━━━━━━━━━━%0A%0A";
 
-        carrito.forEach(producto=>{
+carrito.forEach(producto => {
 
-            mensaje+=`${producto.nombre} x${producto.cantidad}%0A`;
+    mensaje += "📦 *" + producto.nombre + "*%0A";
+    mensaje += "Cantidad: " + producto.cantidad + "%0A";
+    mensaje += "Precio: " + producto.precio.toFixed(2) + " €%0A";
+    mensaje += "-------------------------%0A";
 
-        });
+});
 
-        mensaje+=`%0ATotal: ${totalCarrito.textContent}`;
+mensaje += "%0A💰 *TOTAL: " + totalCarrito.textContent + "*%0A%0A";
+mensaje += "Gracias por comprar en la Asociación Ornitológica de Navas de San Juan.";
 
         window.open(
             `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
