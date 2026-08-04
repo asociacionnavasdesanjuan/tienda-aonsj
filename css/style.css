@@ -857,3 +857,24 @@ CATEGORÍAS
     color:#1f6b37;
     font-size:15px;
 }
+.agotado{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#c0392b;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:not-allowed;
+
+    opacity:.8;
+
+}
