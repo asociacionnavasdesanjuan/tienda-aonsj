@@ -1,0 +1,71 @@
+document.addEventListener("DOMContentLoaded",()=>{
+
+const contenedor=document.getElementById("productos");
+const buscador=document.getElementById("buscarProducto");
+if(!contenedor)return;
+
+const modal=document.getElementById("modalProducto");
+const cerrarModal=document.getElementById("cerrarModal");
+const modalImagen=document.getElementById("modalImagen");
+const modalNombre=document.getElementById("modalNombre");
+const modalDescripcion=document.getElementById("modalDescripcion");
+const modalPrecio=document.getElementById("modalPrecio");
+const modalComprar=document.getElementById("modalComprar");
+
+let productos=[];
+
+function pintar(lista){
+contenedor.innerHTML="";
+lista.forEach(producto=>{
+contenedor.innerHTML+=`
+<div class="producto">
+${producto.nuevo?'<div class="etiqueta nuevo">NUEVO</div>':''}
+${producto.oferta?'<div class="etiqueta oferta">OFERTA</div>':''}
+<img src="${producto.imagen}" alt="${producto.nombre}">
+<h3>${producto.nombre}</h3>
+<p>${producto.descripcion}</p>
+<strong>${Number(producto.precio).toFixed(2)} €</strong><br><br>
+<button class="btnCarrito" data-id="${producto.id}">Añadir al carrito</button>
+</div>`;
+});
+document.querySelectorAll(".btnCarrito").forEach(btn=>{
+btn.onclick=()=>{
+const producto=productos.find(p=>String(p.id)===btn.dataset.id);
+if(!producto)return;
+if(modal){
+modal.style.display="flex";
+modalImagen.src=producto.imagen;
+modalNombre.textContent=producto.nombre;
+modalDescripcion.textContent=producto.descripcion;
+modalPrecio.textContent=Number(producto.precio).toFixed(2)+" €";
+modalComprar.onclick=()=>{
+if(typeof agregarAlCarrito==="function")agregarAlCarrito(producto);
+modal.style.display="none";
+};
+}else{
+if(typeof agregarAlCarrito==="function")agregarAlCarrito(producto);
+}
+};
+});
+}
+
+fetch("data/productos.json")
+.then(r=>r.json())
+.then(data=>{productos=data;pintar(productos);})
+.catch(console.error);
+
+if(buscador){
+buscador.addEventListener("keyup",()=>{
+const t=buscador.value.toLowerCase();
+pintar(productos.filter(p=>p.nombre.toLowerCase().includes(t)||p.descripcion.toLowerCase().includes(t)));
+});
+}
+
+if(cerrarModal){
+cerrarModal.onclick=()=>modal.style.display="none";
+}
+window.onclick=e=>{
+if(modal&&e.target===modal)modal.style.display="none";
+};
+
+});

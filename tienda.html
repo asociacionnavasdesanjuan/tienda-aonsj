@@ -1,139 +1,249 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Oficial del Socio</title>
+// ======================================
+// CARRITO DE LA TIENDA
+// Asociación Ornitológica de Navas de San Juan
+// ======================================
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+const TELEFONO_WHATSAPP = "34640868527";
 
-<body>
-<div id="botonCarrito">
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    🛒 <span id="contador">0</span>
+// ELEMENTOS
+const botonCarrito = document.getElementById("botonCarrito");
+const panelCarrito = document.getElementById("carrito");
+const cerrarCarrito = document.getElementById("cerrarCarrito");
+
+const listaCarrito = document.getElementById("listaCarrito");
+const contador = document.getElementById("contador");
+const totalCarrito = document.getElementById("totalCarrito");
+const btnWhatsapp = document.getElementById("btnWhatsapp");
+const vaciarCarrito = document.getElementById("vaciarCarrito");
+
+//======================================
+
+function guardarCarrito(){
+    localStorage.setItem("carrito",JSON.stringify(carrito));
+}
+
+//======================================
+
+botonCarrito.addEventListener("click",()=>{
+    panelCarrito.classList.add("abierto");
+});
+
+cerrarCarrito.addEventListener("click",()=>{
+    panelCarrito.classList.remove("abierto");
+});
+
+//======================================
+
+function agregarAlCarrito(producto){
+
+    const existe=carrito.find(p=>p.id===producto.id);
+
+    if(existe){
+        existe.cantidad++;
+    }else{
+
+        carrito.push({
+
+            id:producto.id,
+            nombre:producto.nombre,
+            precio:producto.precio,
+            imagen:producto.imagen,
+            cantidad:1
+
+        });
+
+    }
+
+    guardarCarrito();
+    actualizarCarrito();
+
+}
+
+//======================================
+
+function actualizarCarrito(){
+
+    listaCarrito.innerHTML="";
+
+    let total=0;
+    let totalArticulos=0;
+
+    if(carrito.length===0){
+
+        contador.textContent="0";
+        totalCarrito.textContent="0.00 €";
+        listaCarrito.innerHTML="<p>Tu carrito está vacío.</p>";
+        return;
+
+    }
+
+    carrito.forEach(producto=>{
+
+        total+=producto.precio*producto.cantidad;
+        totalArticulos+=producto.cantidad;
+
+        listaCarrito.innerHTML+=`
+
+<div class="itemCarrito">
+
+<div class="fotoProducto">
+<img src="${producto.imagen}" class="fotoCarrito">
+</div>
+
+<h4>${producto.nombre}</h4>
+
+<div class="cantidad">
+
+<button class="menos" data-id="${producto.id}">➖</button>
+
+<strong>${producto.cantidad}</strong>
+
+<button class="mas" data-id="${producto.id}">➕</button>
 
 </div>
 
-<div id="carrito">
+<p>Precio: ${producto.precio.toFixed(2)} €</p>
 
-    <div class="cabeceraCarrito">
+<p><strong>Subtotal:
+${(producto.precio*producto.cantidad).toFixed(2)} €
+</strong></p>
 
-        <h2>Mi carrito</h2>
-
-        <button id="cerrarCarrito">✖</button>
-
-    </div>
-
-    <div id="listaCarrito"></div>
-
-    <div class="pieCarrito">
-
-    <div class="totalCaja">
-
-    <h3>Total del pedido</h3>
-
-    <span id="totalCarrito">0.00 €</span>
-
-</div>
-
-        <button id="btnWhatsapp">
-            Enviar pedido por WhatsApp
-        </button>
-<button id="vaciarCarrito">
-
-    🗑 Vaciar carrito
-
+<button class="eliminar" data-id="${producto.id}">
+🗑 Eliminar
 </button>
-    </div>
-
-</div>
-<header>
-
-    <img src="LOGO.png" alt="Logo Asociación" class="logo">
-
-    <h1>Asociación Ornitológica de Navas de San Juan</h1>
-
-    <p>Tienda Oficial del Socio</p>
-
-</header>
-
-<nav class="menu">
-
-    <a href="index.html">Inicio</a>
-
-    <a href="#">Tienda</a>
-
-    <a href="#">Contacto</a>
-
-</nav>
-<main>
-
-<div class="categorias">
-
-<button class="filtro" data-categoria="Todos">Todos</button>
-
-<button class="filtro" data-categoria="Alimentación">Alimentación</button>
-
-<button class="filtro" data-categoria="Accesorios">Accesorios</button>
-
-<button class="filtro" data-categoria="Jaulas">Jaulas</button>
-
-<button class="filtro" data-categoria="Salud">Salud</button>
-
-<button class="filtro" data-categoria="Cría">Cría</button>
 
 </div>
 
-<div class="buscador">
+`;
 
-    <input
-        type="text"
-        id="buscador"
-        placeholder="🔍 Buscar productos...">
+    });
 
-</div>
+    contador.textContent=totalArticulos;
+    totalCarrito.textContent=total.toFixed(2)+" €";
 
-<h2>Nuestros productos</h2>
+    // MÁS
 
-<div id="productos"></div>
+    document.querySelectorAll(".mas").forEach(boton=>{
 
-</main>
+        boton.onclick=()=>{
 
+            const id=Number(boton.dataset.id);
 
-<footer>
+            const producto=carrito.find(p=>p.id===id);
 
-    © 2026 Asociación Ornitológica de Navas de San Juan
+            producto.cantidad++;
 
-</footer>
-<!-- =======================================
-     VENTANA DEL PRODUCTO
-======================================= -->
+            guardarCarrito();
 
-<div id="modalProducto" class="modal">
+            actualizarCarrito();
 
-    <div class="modalContenido">
+        }
 
-        <span id="cerrarModal">&times;</span>
+    });
 
-        <img id="modalImagen" src="" alt="Producto">
+    // MENOS
 
-        <h2 id="modalNombre"></h2>
+    document.querySelectorAll(".menos").forEach(boton=>{
 
-        <p id="modalDescripcion"></p>
+        boton.onclick=()=>{
 
-        <h3 id="modalPrecio"></h3>
+            const id=Number(boton.dataset.id);
 
-        <button id="modalComprar">
+            const producto=carrito.find(p=>p.id===id);
 
-            🛒 Añadir al carrito
+            producto.cantidad--;
 
-        </button>
+            if(producto.cantidad<=0){
 
-    </div>
+                carrito=carrito.filter(p=>p.id!==id);
 
-</div>
-<script src="js/productos.js"></script>
-<script src="js/carrito.js"></script>
-</body>
-</html>
+            }
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        }
+
+    });
+
+    // ELIMINAR
+
+    document.querySelectorAll(".eliminar").forEach(boton=>{
+
+        boton.onclick=()=>{
+
+            const id=Number(boton.dataset.id);
+
+            carrito=carrito.filter(p=>p.id!==id);
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        }
+
+    });
+
+}
+
+//======================================
+// VACIAR CARRITO
+//======================================
+
+if(vaciarCarrito){
+
+    vaciarCarrito.onclick=()=>{
+
+        if(confirm("¿Vaciar todo el carrito?")){
+
+            carrito=[];
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        }
+
+    }
+
+}
+
+//======================================
+// WHATSAPP
+//======================================
+
+if(btnWhatsapp){
+
+    btnWhatsapp.onclick=()=>{
+
+        if(carrito.length===0){
+
+            alert("El carrito está vacío.");
+
+            return;
+
+        }
+
+        let mensaje="*PEDIDO TIENDA AONSJ*%0A%0A";
+
+        carrito.forEach(producto=>{
+
+            mensaje+=`${producto.nombre} x${producto.cantidad}%0A`;
+
+        });
+
+        mensaje+=`%0ATotal: ${totalCarrito.textContent}`;
+
+        window.open(
+            `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
+            "_blank"
+        );
+
+    }
+
+}
+
+actualizarCarrito();
