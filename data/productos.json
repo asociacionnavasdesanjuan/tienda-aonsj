@@ -1,11 +1,11 @@
 [
   {
   "id":1,
-  "nombre":"Comedero Exterior",
+  "nombre":"jaulas",
   "categoria": "Comederos",
   "descripcion":"...",
   "precio":3.50,
-  "imagen":"LOGO.png",
+ "imagen":"imagenes/jaula cria rsl 60cm.webp"
   "nuevo":true,
   "oferta":false
 },
@@ -15,7 +15,7 @@
    "categoria": "Comederos",
   "descripcion": "Comedero transparente de gran capacidad.",
   "precio": 3.50,
-  "imagen": "LOGO.png",
+  "imagen":"imagenes/comedero exterior tapa roja.webp"
   "nuevo": false,
   "oferta": true
 },
@@ -25,7 +25,7 @@
    "categoria": "Bebederos",
   "descripcion": "Bebedero automático.",
   "precio": 2.20,
-  "imagen": "LOGO.png",
+"imagen":"imagenes/bebedero 225ml transparente.jpg"
   "nuevo": true,
   "oferta": false
 }
