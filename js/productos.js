@@ -22,6 +22,23 @@ if (bienvenida) {
     `;
 
 }
+    // ===============================
+// CERRAR SESIÓN
+// ===============================
+
+const salir = document.getElementById("cerrarSesion");
+
+if (salir) {
+
+    salir.addEventListener("click", () => {
+
+        localStorage.removeItem("socio");
+
+        window.location.href = "login.html";
+
+    });
+
+}
     const contenedor = document.getElementById("productos");
     const buscador = document.getElementById("buscarProducto");
 
