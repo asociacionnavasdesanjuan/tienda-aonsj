@@ -117,13 +117,17 @@ function actualizarCarrito(){
 
         <div class="itemCarrito">
 
-            <h4>${producto.nombre}</h4>
+          <h4>${producto.nombre}</h4>
 
-            <p>Cantidad: ${producto.cantidad}</p>
+<p>Cantidad: ${producto.cantidad}</p>
 
-            <p>${producto.precio.toFixed(2)} €</p>
+<p>${producto.precio.toFixed(2)} €</p>
 
-            <hr>
+<button class="eliminar" data-id="${producto.id}">
+🗑 Eliminar
+</button>
+
+<hr> 
 
         </div>
 
@@ -134,7 +138,25 @@ function actualizarCarrito(){
     contador.textContent=totalArticulos;
 
     totalCarrito.textContent=total.toFixed(2)+" €";
+    // ======================================
+    // BOTONES ELIMINAR
+    // ======================================
 
+    document.querySelectorAll(".eliminar").forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            const id = Number(boton.dataset.id);
+
+            carrito = carrito.filter(producto => producto.id !== id);
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        });
+
+    });
 }
 // ======================================
 // INICIAR
