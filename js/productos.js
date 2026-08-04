@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const contenedor = document.getElementById("productos"); 
-
+const buscador = document.getElementById("buscarProducto");
     if (!contenedor) return;
 
     fetch("data/productos.json")
@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             contenedor.innerHTML = "";
 
-            productos.forEach(producto => {
+           let listaProductos = productos;
+
+mostrarProductos(listaProductos);
 
                 contenedor.innerHTML += `
                     <div class="producto">
@@ -68,5 +70,39 @@ function activarBotones() {
         });
 
     });
+
+}
+function mostrarProductos(listaProductos){
+
+    contenedor.innerHTML = "";
+
+    listaProductos.forEach(producto=>{
+
+        contenedor.innerHTML += `
+            <div class="producto">
+
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+
+                <h3>${producto.nombre}</h3>
+
+                <p>${producto.descripcion}</p>
+
+                <strong>${producto.precio.toFixed(2)} €</strong>
+
+                <button
+                    class="btnCarrito"
+                    data-id="${producto.id}"
+                    data-nombre="${producto.nombre}"
+                    data-precio="${producto.precio}"
+                    data-imagen="${producto.imagen}">
+                    Añadir al carrito
+                </button>
+
+            </div>
+        `;
+
+    });
+
+    activarBotones();
 
 }
