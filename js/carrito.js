@@ -3,13 +3,11 @@
 // Asociación Ornitológica de Navas de San Juan
 // ======================================
 
-// Número de WhatsApp
 const TELEFONO_WHATSAPP = "34640868527";
 
-// Carrito
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Elementos
+// ELEMENTOS
 const botonCarrito = document.getElementById("botonCarrito");
 const panelCarrito = document.getElementById("carrito");
 const cerrarCarrito = document.getElementById("cerrarCarrito");
@@ -19,76 +17,53 @@ const contador = document.getElementById("contador");
 const totalCarrito = document.getElementById("totalCarrito");
 const btnWhatsapp = document.getElementById("btnWhatsapp");
 const vaciarCarrito = document.getElementById("vaciarCarrito");
-// ======================================
-// GUARDAR
-// ======================================
+
+//======================================
 
 function guardarCarrito(){
-
-    localStorage.setItem(
-        "carrito",
-        JSON.stringify(carrito)
-    );
-
+    localStorage.setItem("carrito",JSON.stringify(carrito));
 }
 
-// ======================================
-// ABRIR
-// ======================================
+//======================================
 
 botonCarrito.addEventListener("click",()=>{
-
     panelCarrito.classList.add("abierto");
-
 });
-
-// ======================================
-// CERRAR
-// ======================================
 
 cerrarCarrito.addEventListener("click",()=>{
-
     panelCarrito.classList.remove("abierto");
-
 });
-// ======================================
-// AÑADIR PRODUCTO
-// ======================================
+
+//======================================
 
 function agregarAlCarrito(producto){
 
-    const existe = carrito.find(item => item.id === producto.id);
+    const existe=carrito.find(p=>p.id===producto.id);
 
     if(existe){
-
         existe.cantidad++;
-
     }else{
 
         carrito.push({
 
-            id: producto.id,
-            nombre: producto.nombre,
-            precio: producto.precio,
-            imagen: producto.imagen,
-            cantidad: 1
+            id:producto.id,
+            nombre:producto.nombre,
+            precio:producto.precio,
+            imagen:producto.imagen,
+            cantidad:1
 
         });
 
     }
 
     guardarCarrito();
-actualizarCarrito();
-    console.log(carrito);
+    actualizarCarrito();
 
 }
-// ======================================
-// ACTUALIZAR CARRITO
-// ======================================
+
+//======================================
 
 function actualizarCarrito(){
-
-    if(!listaCarrito) return;
 
     listaCarrito.innerHTML="";
 
@@ -98,11 +73,8 @@ function actualizarCarrito(){
     if(carrito.length===0){
 
         contador.textContent="0";
-
         totalCarrito.textContent="0.00 €";
-
         listaCarrito.innerHTML="<p>Tu carrito está vacío.</p>";
-
         return;
 
     }
@@ -110,98 +82,102 @@ function actualizarCarrito(){
     carrito.forEach(producto=>{
 
         total+=producto.precio*producto.cantidad;
-
         totalArticulos+=producto.cantidad;
 
         listaCarrito.innerHTML+=`
 
-        <div class="itemCarrito">
+<div class="itemCarrito">
 
 <div class="fotoProducto">
-
-    <img src="${producto.imagen}" class="fotoCarrito" alt="${producto.nombre}">
-
+<img src="${producto.imagen}" class="fotoCarrito">
 </div>
 
 <h4>${producto.nombre}</h4>
 
-<p>
+<div class="cantidad">
 
 <button class="menos" data-id="${producto.id}">➖</button>
 
-<strong style="margin:0 10px;">
-${producto.cantidad}
-</strong>
+<strong>${producto.cantidad}</strong>
 
 <button class="mas" data-id="${producto.id}">➕</button>
 
-</p>
+</div>
 
 <p>Precio: ${producto.precio.toFixed(2)} €</p>
 
-<p>
-
-<strong>
-
-Subtotal:
-
-${(producto.precio * producto.cantidad).toFixed(2)} €
-
-</strong>
-
-</p>
+<p><strong>Subtotal:
+${(producto.precio*producto.cantidad).toFixed(2)} €
+</strong></p>
 
 <button class="eliminar" data-id="${producto.id}">
 🗑 Eliminar
 </button>
 
-<hr> 
+</div>
 
-        </div>
-
-        `;
+`;
 
     });
 
     contador.textContent=totalArticulos;
-
     totalCarrito.textContent=total.toFixed(2)+" €";
-    // ======================================
-    // BOTONES ELIMINAR
-    // ======================================
 
-    document.querySelectorAll(".eliminar").forEach(boton => {
+    // MÁS
 
-        boton.addEventListener("click", () => {
+    document.querySelectorAll(".mas").forEach(boton=>{
 
-            const id = Number(boton.dataset.id);
+        boton.onclick=()=>{
 
-            carrito = carrito.filter(producto => producto.id !== id);
+            const id=Number(boton.dataset.id);
+
+            const producto=carrito.find(p=>p.id===id);
+
+            producto.cantidad++;
 
             guardarCarrito();
 
             actualizarCarrito();
 
-        });
+        }
 
     });
-}
-// ======================================
-// INICIAR
-// ======================================
 
-actualizarCarrito();
-// ======================================
-// VACIAR CARRITO
-// ======================================
+    // MENOS
 
-if (vaciarCarrito) {
+    document.querySelectorAll(".menos").forEach(boton=>{
 
-    vaciarCarrito.addEventListener("click", () => {
+        boton.onclick=()=>{
 
-        if (confirm("¿Seguro que quieres vaciar el carrito?")) {
+            const id=Number(boton.dataset.id);
 
-            carrito = [];
+            const producto=carrito.find(p=>p.id===id);
+
+            producto.cantidad--;
+
+            if(producto.cantidad<=0){
+
+                carrito=carrito.filter(p=>p.id!==id);
+
+            }
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        }
+
+    });
+
+    // ELIMINAR
+
+    document.querySelectorAll(".eliminar").forEach(boton=>{
+
+        boton.onclick=()=>{
+
+            const id=Number(boton.dataset.id);
+
+            carrito=carrito.filter(p=>p.id!==id);
 
             guardarCarrito();
 
@@ -212,3 +188,62 @@ if (vaciarCarrito) {
     });
 
 }
+
+//======================================
+// VACIAR CARRITO
+//======================================
+
+if(vaciarCarrito){
+
+    vaciarCarrito.onclick=()=>{
+
+        if(confirm("¿Vaciar todo el carrito?")){
+
+            carrito=[];
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        }
+
+    }
+
+}
+
+//======================================
+// WHATSAPP
+//======================================
+
+if(btnWhatsapp){
+
+    btnWhatsapp.onclick=()=>{
+
+        if(carrito.length===0){
+
+            alert("El carrito está vacío.");
+
+            return;
+
+        }
+
+        let mensaje="*PEDIDO TIENDA AONSJ*%0A%0A";
+
+        carrito.forEach(producto=>{
+
+            mensaje+=`${producto.nombre} x${producto.cantidad}%0A`;
+
+        });
+
+        mensaje+=`%0ATotal: ${totalCarrito.textContent}`;
+
+        window.open(
+            `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
+            "_blank"
+        );
+
+    }
+
+}
+
+actualizarCarrito();
