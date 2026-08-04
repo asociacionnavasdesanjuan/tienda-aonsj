@@ -74,7 +74,13 @@ console.log("PRODUCTOS CARGADOS");
                 <p>${producto.descripcion}</p>
 
                 <strong>${producto.precio.toFixed(2)} €</strong>
-
+<p class="stock">
+    ${
+        producto.stock > 0
+            ? `🟢 Disponible (${producto.stock} uds.)`
+            : `🔴 Agotado`
+    }
+</p>
            <button
     class="btnCarrito"
     data-id="${producto.id}"
