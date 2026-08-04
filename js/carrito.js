@@ -18,7 +18,7 @@ const listaCarrito = document.getElementById("listaCarrito");
 const contador = document.getElementById("contador");
 const totalCarrito = document.getElementById("totalCarrito");
 const btnWhatsapp = document.getElementById("btnWhatsapp");
-
+const vaciarCarrito = document.getElementById("vaciarCarrito");
 // ======================================
 // GUARDAR
 // ======================================
@@ -191,3 +191,24 @@ ${(producto.precio * producto.cantidad).toFixed(2)} €
 // ======================================
 
 actualizarCarrito();
+// ======================================
+// VACIAR CARRITO
+// ======================================
+
+if (vaciarCarrito) {
+
+    vaciarCarrito.addEventListener("click", () => {
+
+        if (confirm("¿Seguro que quieres vaciar el carrito?")) {
+
+            carrito = [];
+
+            guardarCarrito();
+
+            actualizarCarrito();
+
+        }
+
+    });
+
+}
