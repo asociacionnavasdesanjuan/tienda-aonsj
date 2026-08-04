@@ -611,3 +611,38 @@ ETIQUETAS
     background:#e74c3c;
 
 }
+/* ==========================
+   BUSCADOR
+========================== */
+
+.buscador{
+
+    text-align:center;
+    margin:25px 0;
+
+}
+
+#buscarProducto{
+
+    width:90%;
+    max-width:450px;
+
+    padding:14px;
+
+    border-radius:30px;
+
+    border:2px solid #2f855a;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+#buscarProducto:focus{
+
+    box-shadow:0 0 12px rgba(47,133,90,.4);
+
+}
