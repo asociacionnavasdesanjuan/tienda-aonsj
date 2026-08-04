@@ -851,3 +851,9 @@ CATEGORÍAS
     resize:vertical;
 
 }
+.stock{
+    margin:10px 0;
+    font-weight:bold;
+    color:#1f6b37;
+    font-size:15px;
+}
