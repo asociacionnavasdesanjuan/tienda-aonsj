@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("data/productos.json")
         .then(respuesta => respuesta.json())
         .then(productos => {
-
+console.log("PRODUCTOS CARGADOS");
             listaProductos = productos;
 
             mostrarProductos(listaProductos);
