@@ -1,51 +1,116 @@
 document.getElementById("entrar").addEventListener("click", entrar);
 
+
 async function entrar() {
 
+
     const usuario = document.getElementById("usuario").value.trim();
+
     const password = document.getElementById("password").value.trim();
+
     const mensaje = document.getElementById("mensaje");
+
 
     try {
 
-        const respuesta = await fetch("data/socios.json");
+
+        const respuesta = await fetch("./data/socios.json");
+
+
         const socios = await respuesta.json();
+
+
 
         const socio = socios.find(s =>
 
             s.numero === usuario &&
-            s.password === password
+
+            s.password.toUpperCase() === password.toUpperCase()
 
         );
 
-      if (socio) {
 
-    localStorage.setItem("socio", JSON.stringify(socio));
 
-    // ¿Debe cambiar la contraseña?
-    if (socio.cambiarPassword === true) {
+        if (!socio) {
 
-        window.location.href = "cambiar-password.html";
 
-    } else {
-
-        window.location.href = "tienda.html";
-
-    }
-
-} else {
             mensaje.style.color = "red";
-            mensaje.textContent = "Número de socio o contraseña incorrectos.";
+
+            mensaje.textContent =
+            "Número de socio o contraseña incorrectos.";
+
+            return;
 
         }
 
-    } catch (error) {
 
-        mensaje.style.color = "red";
-        mensaje.textContent = "Error al comprobar los datos.";
+
+        if(socio.estado !== "ACTIVO"){
+
+
+            mensaje.style.color = "red";
+
+            mensaje.textContent =
+            "Este socio no tiene acceso activo.";
+
+            return;
+
+        }
+
+
+
+        localStorage.setItem(
+            "socio",
+            JSON.stringify(socio)
+        );
+
+
+
+        if(socio.cambiarPassword === true){
+
+
+            window.location.href =
+            "cambiar-password.html";
+
+
+        }else{
+
+
+            if(
+            socio.rol === "ADMIN" ||
+            socio.rol === "ADMIN_PRINCIPAL"
+            ){
+
+                window.location.href =
+                "admin.html";
+
+
+            }else{
+
+
+                window.location.href =
+                "tienda.html";
+
+
+            }
+
+        }
+
+
+
+    } catch(error){
+
 
         console.error(error);
 
+
+        mensaje.style.color="red";
+
+        mensaje.textContent =
+        "Error al comprobar los datos.";
+
+
     }
+
 
 }
