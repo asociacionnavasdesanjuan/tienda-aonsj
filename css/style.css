@@ -215,6 +215,16 @@ align-items:center;
 
 #cerrarCarrito{
 
+    font-size:28px;
+    cursor:pointer;
+    border:none;
+    background:none;
+    color:#d40000;
+    font-weight:bold;
+    z-index:10001;
+
+}
+
 background:none;
 
 border:none;
