@@ -158,6 +158,29 @@
 
 <script src="js/carrito.js"></script>
 <script src="js/productos.js"></script>
+<script>
 
+const socio = JSON.parse(localStorage.getItem("socio"));
+
+const botonAdmin = document.getElementById("botonAdmin");
+
+if (socio) {
+
+    document.getElementById("bienvenidaSocio").textContent =
+    "Bienvenido/a " + socio.nombre;
+
+
+    if (
+        socio.rol === "ADMIN" ||
+        socio.rol === "ADMIN_PRINCIPAL"
+    ) {
+
+        botonAdmin.style.display = "inline-block";
+
+    }
+
+}
+
+</script>
 </body>
 </html>
