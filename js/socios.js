@@ -127,9 +127,8 @@ ${socio.estado === "ACTIVO" ? "🟢 Activo" : "🔴 Inactivo"}
 
 function verSocio(numero){
 
-    alert(
-        "Ficha del socio Nº " + numero
-    );
+window.location.href =
+"ficha-socio.html?numero=" + numero;
 
 }
 
