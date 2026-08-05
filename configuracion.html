@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Configuración</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<script>
+
+const admin = localStorage.getItem("admin");
+
+if(admin !== "SI"){
+
+    window.location.href="admin-login.html";
+
+}
+
+</script>
+
+<header>
+
+<img src="LOGO.png" class="logo">
+
+<h1>Asociación Ornitológica de Navas de San Juan</h1>
+
+<p>Configuración del Sistema</p>
+
+</header>
+
+<main>
+
+<h2>⚙️ Configuración</h2>
+
+<div class="panelAdmin">
+
+<a href="#" class="tarjetaAdmin">
+
+<span class="icono">🏛️</span>
+
+<h3>Datos de la Asociación</h3>
+
+<p>Nombre, dirección, NIF, teléfono, correo...</p>
+
+</a>
+
+<a href="#" class="tarjetaAdmin">
+
+<span class="icono">🛒</span>
+
+<h3>Tienda</h3>
+
+<p>Pedido mínimo, gastos de envío y mensajes.</p>
+
+</a>
+
+<a href="#" class="tarjetaAdmin">
+
+<span class="icono">💳</span>
+
+<h3>Pagos</h3>
+
+<p>Pasarela de pago, Bizum y cuenta bancaria.</p>
+
+</a>
+
+<a href="#" class="tarjetaAdmin">
+
+<span class="icono">👨‍💼</span>
+
+<h3>Administradores</h3>
+
+<p>Permisos, cargos y usuarios.</p>
+
+</a>
+
+<a href="#" class="tarjetaAdmin">
+
+<span class="icono">💾</span>
+
+<h3>Copias de Seguridad</h3>
+
+<p>Crear y restaurar copias del sistema.</p>
+
+</a>
+
+</div>
+
+</main>
+
+<script src="js/configuracion.js"></script>
+
+</body>
+
+</html>
