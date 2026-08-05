@@ -65,5 +65,27 @@ function agregarAlCarrito(producto){
     alert(producto.nombre + " añadido al carrito.");
 
 }
+//======================================
+// ABRIR Y CERRAR CARRITO
+//======================================
 
+if(botonCarrito && panelCarrito){
+
+    botonCarrito.onclick = ()=>{
+
+        panelCarrito.classList.add("abierto");
+
+    };
+
+}
+
+if(cerrarCarrito && panelCarrito){
+
+    cerrarCarrito.onclick = ()=>{
+
+        panelCarrito.classList.remove("abierto");
+
+    };
+
+}
 actualizarContador();
