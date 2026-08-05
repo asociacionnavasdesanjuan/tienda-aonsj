@@ -87,7 +87,7 @@ if(cancelarPedido){
 
 }
    
-}function guardarCarrito(){
+function guardarCarrito(){
 
  localStorage.setItem("carrito",JSON.stringify(carrito));
 }    
