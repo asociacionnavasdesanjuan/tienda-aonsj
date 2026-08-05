@@ -37,6 +37,7 @@ if (botonCarrito && panelCarrito) {
 if (cerrarCarrito && panelCarrito) {
 
     cerrarCarrito.addEventListener("click", () => {
+        
         panelCarrito.classList.remove("abierto");
     });
 
