@@ -18,14 +18,22 @@ async function entrar() {
 
         );
 
-        if (socio) {
+      if (socio) {
 
-            localStorage.setItem("socio", JSON.stringify(socio));
+    localStorage.setItem("socio", JSON.stringify(socio));
 
-            window.location.href = "tienda.html";
+    // ¿Debe cambiar la contraseña?
+    if (socio.cambiarPassword === true) {
 
-        } else {
+        window.location.href = "cambiar-password.html";
 
+    } else {
+
+        window.location.href = "tienda.html";
+
+    }
+
+} else {
             mensaje.style.color = "red";
             mensaje.textContent = "Número de socio o contraseña incorrectos.";
 
