@@ -987,3 +987,109 @@ PANEL DE ADMINISTRACIÓN
     font-size:15px;
 
 }
+/*======================================
+LOGIN PROFESIONAL
+======================================*/
+
+.login{
+
+    width:420px;
+    max-width:95%;
+    margin:50px auto;
+    background:#ffffff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+}
+
+.logoLogin{
+
+    width:130px;
+    display:block;
+    margin:0 auto 20px;
+
+}
+
+.textoAcceso{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.campoLogin{
+
+    margin-bottom:20px;
+
+}
+
+.campoLogin label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#1f6b37;
+    font-size:17px;
+
+}
+
+.campoLogin input{
+
+    width:100%;
+    height:55px;
+    font-size:20px;
+    padding:0 15px;
+    border:2px solid #cfcfcf;
+    border-radius:10px;
+    box-sizing:border-box;
+
+}
+
+.contenedorPassword{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+}
+
+.contenedorPassword input{
+
+    flex:1;
+
+}
+
+.botonOjo{
+
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:24px;
+    background:#1f6b37;
+    color:white;
+
+}
+
+.botonEntrar{
+
+    width:100%;
+    height:60px;
+    font-size:22px;
+    font-weight:bold;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#1f6b37;
+    color:white;
+    margin-top:10px;
+
+}
+
+.botonEntrar:hover{
+
+    background:#2d8c49;
+
+}
