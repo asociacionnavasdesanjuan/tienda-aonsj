@@ -6,7 +6,9 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const contador = document.getElementById("contador");
-
+const botonCarrito = document.getElementById("botonCarrito");
+const panelCarrito = document.getElementById("carrito");
+const cerrarCarrito = document.getElementById("cerrarCarrito");
 //======================================
 
 function guardarCarrito(){
