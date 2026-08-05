@@ -7,7 +7,7 @@
     "password": "70578425G",
     "cambiarPassword": true,
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+     "cuota": "PAGADA",
   "rol": "ADMIN_PRINCIPAL"
   },
   {
