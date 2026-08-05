@@ -245,78 +245,59 @@ if(vaciarCarrito){
 
 if(btnWhatsapp){
 
-    btnWhatsapp.onclick=()=>{
+    btnWhatsapp.onclick = ()=>{
 
         if(carrito.length===0){
 
             alert("El carrito está vacío.");
-
             return;
-let resumen = "<strong>¿Deseas enviar este pedido?</strong><br><br>";
 
-carrito.forEach(producto=>{
-
-    resumen += producto.nombre + " x " + producto.cantidad + "<br>";
-
-});
-
-resumen += "<br><strong>Total: " + totalCarrito.textContent + "</strong>";
-
-resumenPedido.innerHTML = resumen;
-
-ventanaConfirmar.style.display = "flex";
         }
-const socio = JSON.parse(localStorage.getItem("socio"));
 
-const observaciones = document.getElementById("observaciones").value;
-        
-let mensaje = "";
-        
- mensaje += "🟢 *PEDIDO " + NOMBRE_ASOCIACION.toUpperCase() + "*%0A";  
-mensaje += "━━━━━━━━━━━━━━━━━━%0A%0A";
-mensaje += "👤 *DATOS DEL SOCIO*%0A";
+        const socio = JSON.parse(localStorage.getItem("socio"));
+        const observaciones = document.getElementById("observaciones").value;
 
-mensaje += "Nº Socio: " + socio.numero + "%0A";
+        let mensaje = "";
 
-mensaje += "Nombre: " + socio.nombre + "%0A";
+        mensaje += "🟢 *PEDIDO " + NOMBRE_ASOCIACION.toUpperCase() + "*%0A";
+        mensaje += "━━━━━━━━━━━━━━━━━━%0A%0A";
 
-mensaje += "Teléfono: " + socio.telefono + "%0A%0A";
+        mensaje += "👤 *DATOS DEL SOCIO*%0A";
+        mensaje += "Nº Socio: " + socio.numero + "%0A";
+        mensaje += "Nombre: " + socio.nombre + "%0A";
+        mensaje += "Teléfono: " + socio.telefono + "%0A%0A";
 
-mensaje += "📦 *DIRECCIÓN DE ENVÍO*%0A";
+        mensaje += "📦 *DIRECCIÓN DE ENVÍO*%0A";
+        mensaje += socio.direccion + "%0A";
+        mensaje += socio.cp + " - " + socio.poblacion + "%0A";
+        mensaje += socio.provincia + "%0A";
 
-mensaje += socio.direccion + "%0A";
+        if(observaciones!=""){
 
-mensaje += socio.cp + " - " + socio.poblacion + "%0A";
+            mensaje += "Observaciones: " + observaciones + "%0A";
 
-mensaje += socio.provincia + "%0A";
+        }
 
-if (observaciones !== "") {
+        mensaje += "%0A━━━━━━━━━━━━━━━━━━%0A%0A";
 
-    mensaje += "Observaciones: " + observaciones + "%0A";
+        carrito.forEach(producto=>{
 
-}
+            mensaje += "📦 *" + producto.nombre + "*%0A";
+            mensaje += "Cantidad: " + producto.cantidad + "%0A";
+            mensaje += "Precio: " + producto.precio.toFixed(2) + " €%0A";
+            mensaje += "-------------------------%0A";
 
-mensaje += "%0A━━━━━━━━━━━━━━━━━━%0A%0A";
-carrito.forEach(producto => {
+        });
 
-    mensaje += "📦 *" + producto.nombre + "*%0A";
-    mensaje += "Cantidad: " + producto.cantidad + "%0A";
-    mensaje += "Precio: " + producto.precio.toFixed(2) + " €%0A";
-    mensaje += "-------------------------%0A";
+        mensaje += "%0A💰 *TOTAL: " + totalCarrito.textContent + "*%0A%0A";
+        mensaje += MENSAJE_FINAL;
 
-});
+        window.open(
+            `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
+            "_blank"
+        );
 
-mensaje += "%0A💰 *TOTAL: " + totalCarrito.textContent + "*%0A%0A";
-
-mensaje += MENSAJE_FINAL;       
-        
- window.open(
-    `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
-    "_blank"
-);  
-
-    }
+    };
 
 }
-
 actualizarCarrito();
