@@ -33,6 +33,10 @@ const totalCarrito = document.getElementById("totalCarrito");
 const btnWhatsapp = document.getElementById("btnWhatsapp");
 const vaciarCarrito = document.getElementById("vaciarCarrito");
 const revisarPedido = document.getElementById("revisarPedido");
+const ventanaConfirmar = document.getElementById("confirmarPedido");
+const resumenPedido = document.getElementById("resumenPedido");
+const cancelarPedido = document.getElementById("cancelarPedido");
+
 if(revisarPedido){
 
     revisarPedido.onclick = ()=>{
@@ -68,9 +72,7 @@ if(revisarPedido){
     };
 
 }
-const ventanaConfirmar = document.getElementById("confirmarPedido");
-const resumenPedido = document.getElementById("resumenPedido");
-const cancelarPedido = document.getElementById("cancelarPedido");
+
 //======================================
 
 function guardarCarrito(){
