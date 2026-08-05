@@ -57,3 +57,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 });
+// =====================================
+// VENTANA NUEVO PRODUCTO
+// =====================================
+
+const botonNuevoProducto = document.getElementById("nuevoProducto");
+const ventanaProducto = document.getElementById("ventanaProducto");
+const cerrarVentanaProducto = document.getElementById("cerrarVentanaProducto");
+
+if (botonNuevoProducto) {
+
+    botonNuevoProducto.onclick = () => {
+
+        ventanaProducto.style.display = "flex";
+
+    };
+
+}
+
+if (cerrarVentanaProducto) {
+
+    cerrarVentanaProducto.onclick = () => {
+
+        ventanaProducto.style.display = "none";
+
+    };
+
+}
