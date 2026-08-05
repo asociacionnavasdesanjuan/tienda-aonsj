@@ -23,7 +23,42 @@
 <p>Gestión de Socios</p>
 
 </header>
+<!-- VENTANA EMERGENTE -->
 
+<div id="ventanaSocio" class="modal" style="display:none;">
+
+    <div class="modalContenido">
+
+        <h2>➕ Nuevo Socio</h2>
+
+        <label>Número de socio</label>
+        <input type="text" id="nuevoNumero">
+
+        <label>Nombre completo</label>
+        <input type="text" id="nuevoNombre">
+
+        <label>Teléfono</label>
+        <input type="text" id="nuevoTelefono">
+
+        <label>Dirección</label>
+        <input type="text" id="nuevaDireccion">
+
+        <label>Contraseña</label>
+        <input type="password" id="nuevoPassword">
+
+        <br><br>
+
+        <button id="guardarNuevoSocio">
+            💾 Guardar
+        </button>
+
+        <button id="cerrarVentana">
+            ❌ Cancelar
+        </button>
+
+    </div>
+
+</div>
 <main>
 
 <h2>👥 Gestión de Socios</h2>
