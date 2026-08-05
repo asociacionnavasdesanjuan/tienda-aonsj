@@ -70,7 +70,50 @@ placeholder="Buscar producto...">
 </tbody>
 
 </table>
+<!-- VENTANA NUEVO PRODUCTO -->
 
+<div id="ventanaProducto" class="modal" style="display:none;">
+
+    <div class="modalContenido">
+
+        <h2>➕ Nuevo Producto</h2>
+
+        <label>Nombre</label>
+        <input type="text" id="nuevoNombreProducto">
+
+        <label>Descripción</label>
+        <textarea id="nuevaDescripcionProducto"></textarea>
+
+        <label>Precio (€)</label>
+        <input type="number" id="nuevoPrecioProducto" step="0.01">
+
+        <label>Stock</label>
+        <input type="number" id="nuevoStockProducto">
+
+        <label>Categoría</label>
+        <select id="nuevaCategoriaProducto">
+            <option>Anillas</option>
+            <option>Alimentación</option>
+            <option>Jaulas</option>
+            <option>Accesorios</option>
+        </select>
+
+        <label>Ruta de la imagen</label>
+        <input type="text" id="nuevaImagenProducto" placeholder="img/productos/foto.jpg">
+
+        <br><br>
+
+        <button id="guardarProducto">
+            💾 Guardar
+        </button>
+
+        <button id="cerrarVentanaProducto">
+            ❌ Cancelar
+        </button>
+
+    </div>
+
+</div>
 </main>
 
 <script src="js/productos-admin.js"></script>
