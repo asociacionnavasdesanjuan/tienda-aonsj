@@ -15,11 +15,21 @@
 <body>
 <script>
 
-const admin = localStorage.getItem("admin");
+const usuario = JSON.parse(localStorage.getItem("socio"));
 
-if(admin !== "SI"){
+if(!usuario){
 
-    window.location.href = "admin-login.html";
+    window.location.href = "login.html";
+
+}
+
+
+if(
+usuario.rol !== "ADMIN" &&
+usuario.rol !== "ADMIN_PRINCIPAL"
+){
+
+    window.location.href = "tienda.html";
 
 }
 
@@ -36,7 +46,9 @@ if(admin !== "SI"){
 
 <main>
 
-<h2>👨‍💼 Bienvenido Administrador</h2>
+<h2 id="bienvenidaAdmin">
+👨‍💼 Bienvenido Administrador
+</h2>
 
 <div class="panelAdmin">
 
@@ -91,7 +103,15 @@ if(admin !== "SI"){
 </div>
 
 </main>
+<script>
 
+const usuario = JSON.parse(localStorage.getItem("socio"));
+
+document.getElementById("bienvenidaAdmin").textContent =
+"👨‍💼 Bienvenido/a " + usuario.nombre;
+
+
+</script>
 </body>
 
 </html>
