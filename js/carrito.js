@@ -4,6 +4,11 @@
 // ======================================
 
 let TELEFONO_WHATSAPP = "34640868527";
+let NOMBRE_ASOCIACION = "Asociación Ornitológica de Navas de San Juan";
+mensaje += "%0A💰 *TOTAL: " + totalCarrito.textContent + "*%0A%0A";
+
+mensaje += MENSAJE_FINAL;
+
 const configuracionGuardada = localStorage.getItem("configuracionAONSJ");
 
 if (configuracionGuardada) {
@@ -251,7 +256,7 @@ if(btnWhatsapp){
 const socio = JSON.parse(localStorage.getItem("socio"));
 
 const observaciones = document.getElementById("observaciones").value;
-        let mensaje = "🟢 *PEDIDO TIENDA OFICIAL AONSJ*%0A";
+ mensaje += "🟢 *PEDIDO " + NOMBRE_ASOCIACION.toUpperCase() + "*%0A";  
 mensaje += "━━━━━━━━━━━━━━━━━━%0A%0A";
 mensaje += "👤 *DATOS DEL SOCIO*%0A";
 
@@ -286,7 +291,7 @@ carrito.forEach(producto => {
 });
 
 mensaje += "%0A💰 *TOTAL: " + totalCarrito.textContent + "*%0A%0A";
-mensaje += "Gracias por comprar en la Asociación Ornitológica de Navas de San Juan.";
+
 
         window.open(
             `https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`,
