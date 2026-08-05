@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
 
 const datos = document.getElementById("datosSocio");
@@ -11,25 +11,28 @@ const numero = parametros.get("numero");
 
 
 
-fetch("data/socios.json")
+fetch("./data/socios.json")
 
 
-.then(res=>res.json())
+.then(res => res.json())
 
 
-.then(socios=>{
+.then(socios => {
 
 
-const socio = socios.find(s=>s.numero === numero);
+
+const socio = socios.find(s => s.numero === numero);
 
 
 
 if(!socio){
 
+
 datos.innerHTML = 
 "<h3>Socio no encontrado</h3>";
 
 return;
+
 
 }
 
@@ -37,42 +40,46 @@ return;
 
 datos.innerHTML = `
 
+<h3>🪪 Número de socio: ${socio.numero}</h3>
 
-<p><strong>Número de socio:</strong> ${socio.numero}</p>
-
-<p><strong>Nombre:</strong> ${socio.nombre}</p>
+<p><strong>Nombre:</strong> ${socio.nombre || "-"}</p>
 
 <p><strong>DNI:</strong> ${socio.dni || "-"}</p>
 
 <p><strong>Teléfono:</strong> ${socio.telefono || "-"}</p>
 
-<p><strong>Estado:</strong> ${socio.estado}</p>
+<p><strong>Email:</strong> ${socio.email || "-"}</p>
 
-<p><strong>Rol:</strong> ${socio.rol}</p>
+<p><strong>Dirección:</strong> ${socio.direccion || "-"}</p>
 
-<p><strong>Cuota:</strong> ${socio.cuota}</p>
+<p><strong>CP:</strong> ${socio.cp || "-"}</p>
 
-<p><strong>Cambio contraseña:</strong> ${socio.cambiarPassword ? "Pendiente" : "Realizado"}</p>
+<p><strong>Población:</strong> ${socio.poblacion || "-"}</p>
 
+<p><strong>Provincia:</strong> ${socio.provincia || "-"}</p>
 
 <hr>
 
+<p><strong>Estado:</strong> ${socio.estado || "-"}</p>
 
-<h3>🪪 Carné</h3>
+<p><strong>Cuota:</strong> ${socio.cuota || "-"}</p>
 
-<p>
-Pendiente de enlazar documento del socio.
+<p><strong>Rol:</strong> ${socio.rol || "SOCIO"}</p>
+
+<p><strong>Cambio contraseña:</strong> 
+${socio.cambiarPassword ? "Pendiente" : "Realizado"}
 </p>
 
+<hr>
 
-<h3>📦 Pedidos</h3>
+<h3>🪪 Carné del socio</h3>
 
 <p>
-Pendiente de módulo pedidos.
+Pendiente de añadir documento.
 </p>
-
 
 `;
+
 
 
 });
