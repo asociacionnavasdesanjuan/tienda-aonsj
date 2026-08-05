@@ -86,11 +86,11 @@ if(cancelarPedido){
     };
 
 }
-    localStorage.setItem("carrito",JSON.stringify(carrito));
-}
-function guardarCarrito(){
-//======================================
+   
+}function guardarCarrito(){
 
+ localStorage.setItem("carrito",JSON.stringify(carrito));
+}    
 if (botonCarrito && panelCarrito) {
 
     botonCarrito.addEventListener("click", () => {
