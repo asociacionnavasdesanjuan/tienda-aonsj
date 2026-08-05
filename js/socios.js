@@ -1,16 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const tabla = document.querySelector("#tablaSocios tbody");
+    const buscar = document.getElementById("buscarSocio");
 
-    fetch("data/socios.json")
+    let listaSocios = [];
+
+
+    cargarSocios();
+
+
+    function cargarSocios(){
+
+        fetch("data/socios.json")
+
         .then(respuesta => respuesta.json())
+
         .then(socios => {
 
-            tabla.innerHTML = "";
+            listaSocios = socios;
 
-            socios.forEach(socio => {
+            mostrarSocios(listaSocios);
 
-                tabla.innerHTML += `
+        })
+
+        .catch(error => {
+
+            console.error("Error cargando socios:", error);
+
+        });
+
+    }
+
+
+
+    function mostrarSocios(socios){
+
+
+        tabla.innerHTML = "";
+
+
+        socios.forEach(socio => {
+
+
+            tabla.innerHTML += `
 
 <tr>
 
@@ -18,15 +50,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <td>${socio.nombre}</td>
 
-<td>${socio.telefono}</td>
+<td>${socio.telefono || "-"}</td>
 
-<td>🟢 Activo</td>
+<td>
+${socio.estado === "ACTIVO" ? "🟢 Activo" : "🔴 Inactivo"}
+</td>
+
 
 <td>
 
-<button>✏️</button>
+<button onclick="verSocio('${socio.numero}')">
+👁️
+</button>
 
-<button>🗑️</button>
+
+<button onclick="editarSocio('${socio.numero}')">
+✏️
+</button>
+
+
+<button onclick="eliminarSocio('${socio.numero}')">
+🗑️
+</button>
+
 
 </td>
 
@@ -34,34 +80,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
 `;
 
-            });
+        });
+
+
+    }
+
+
+
+    // BUSCADOR
+
+    if(buscar){
+
+        buscar.addEventListener("input",()=>{
+
+
+            const texto = buscar.value.toLowerCase();
+
+
+            const filtrados = listaSocios.filter(socio =>
+
+                socio.numero.includes(texto) ||
+
+                socio.nombre.toLowerCase().includes(texto)
+
+            );
+
+
+            mostrarSocios(filtrados);
+
 
         });
 
+    }
+
+
+
 });
-// =====================================
-// VENTANA NUEVO SOCIO
-// =====================================
+
+
+
+
+// =============================
+// FUNCIONES PREPARADAS
+// =============================
+
+
+function verSocio(numero){
+
+    alert(
+        "Ficha del socio Nº " + numero
+    );
+
+}
+
+
+
+function editarSocio(numero){
+
+    alert(
+        "Editar socio Nº " + numero
+    );
+
+}
+
+
+
+function eliminarSocio(numero){
+
+    const confirmar = confirm(
+        "¿Eliminar definitivamente el socio Nº " + numero + "?"
+    );
+
+
+    if(confirmar){
+
+        alert(
+            "Preparado para eliminar socio Nº " + numero
+        );
+
+    }
+
+}
+
+
+
+// =============================
+// NUEVO SOCIO
+// =============================
 
 const botonNuevo = document.getElementById("nuevoSocio");
+
 const ventana = document.getElementById("ventanaSocio");
+
 const cerrar = document.getElementById("cerrarVentana");
 
-if (botonNuevo) {
 
-    botonNuevo.onclick = () => {
+if(botonNuevo){
 
-        ventana.style.display = "flex";
+    botonNuevo.onclick = ()=>{
+
+        ventana.style.display="flex";
 
     };
 
 }
 
-if (cerrar) {
 
-    cerrar.onclick = () => {
 
-        ventana.style.display = "none";
+if(cerrar){
+
+    cerrar.onclick = ()=>{
+
+        ventana.style.display="none";
 
     };
 
