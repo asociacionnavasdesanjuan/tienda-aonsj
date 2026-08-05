@@ -3,8 +3,20 @@
 // Asociación Ornitológica de Navas de San Juan
 // ======================================
 
-const TELEFONO_WHATSAPP = "34640868527";
+let TELEFONO_WHATSAPP = "34640868527";
+const configuracionGuardada = localStorage.getItem("configuracionAONSJ");
 
+if (configuracionGuardada) {
+
+    const config = JSON.parse(configuracionGuardada);
+
+    if (config.asociacion.whatsapp) {
+
+        TELEFONO_WHATSAPP = "34" + config.asociacion.whatsapp;
+
+    }
+
+}
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // ELEMENTOS
