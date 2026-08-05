@@ -1,12 +1,24 @@
 [
   {
+    "id": 1,
     "numero": "001",
     "nombre": "Francisco García Mendoza",
+    "dni": "70578425G",
     "password": "70578425G",
+    "cambiarPassword": true,
+
     "telefono": "640868527",
     "direccion": "Calle Lorite 133",
     "cp": "23240",
     "poblacion": "Navas de San Juan",
-    "provincia": "Jaén"
+    "provincia": "Jaén",
+
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO",
+
+    "ultimoAcceso": "",
+    "ultimoCambioPassword": "",
+    "fechaAlta": "2026-01-01"
   }
 ]
