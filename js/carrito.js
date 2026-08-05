@@ -33,6 +33,9 @@ const totalCarrito = document.getElementById("totalCarrito");
 const btnWhatsapp = document.getElementById("btnWhatsapp");
 const vaciarCarrito = document.getElementById("vaciarCarrito");
 
+const ventanaConfirmar = document.getElementById("confirmarPedido");
+const resumenPedido = document.getElementById("resumenPedido");
+const cancelarPedido = document.getElementById("cancelarPedido");
 //======================================
 
 function guardarCarrito(){
@@ -249,7 +252,19 @@ if(btnWhatsapp){
             alert("El carrito está vacío.");
 
             return;
+let resumen = "<strong>¿Deseas enviar este pedido?</strong><br><br>";
 
+carrito.forEach(producto=>{
+
+    resumen += producto.nombre + " x " + producto.cantidad + "<br>";
+
+});
+
+resumen += "<br><strong>Total: " + totalCarrito.textContent + "</strong>";
+
+resumenPedido.innerHTML = resumen;
+
+ventanaConfirmar.style.display = "flex";
         }
 const socio = JSON.parse(localStorage.getItem("socio"));
 
