@@ -2,23 +2,106 @@
   {
     "id": 1,
     "numero": "001",
-    "nombre": "Francisco García Mendoza",
+    "nombre": "Francisco Garcia Mendoza",
     "dni": "70578425G",
     "password": "70578425G",
     "cambiarPassword": true,
-
-    "telefono": "640868527",
-    "direccion": "Calle Lorite 133",
-    "cp": "23240",
-    "poblacion": "Navas de San Juan",
-    "provincia": "Jaén",
-
     "estado": "ACTIVO",
     "cuota": "PAGADA",
-    "rol": "SOCIO",
+    "rol": "SOCIO"
+  },
+  {
+    "id": 4,
+    "numero": "004",
+    "nombre": "Antonio Manuel Herrera Almijo",
+    "dni": "26522119Z",
+    "password": "26522119Z",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
+  {
+    "id": 8,
+    "numero": "008",
+    "nombre": "Dolores Diaz Munuera",
+    "dni": "26243278W",
+    "password": "26243278W",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
 
-    "ultimoAcceso": "",
-    "ultimoCambioPassword": "",
-    "fechaAlta": "2026-01-01"
+  {
+    "id": 12,
+    "numero": "012",
+    "nombre": "Adrian Gonzalez Navidades",
+    "dni": "11867128W",
+    "password": "11867128W",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
+
+  {
+    "id": 16,
+    "numero": "016",
+    "nombre": "Francisco Javier Aguilera Pajares",
+    "dni": "24232808P",
+    "password": "24232808P",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
+
+  {
+    "id": 19,
+    "numero": "019",
+    "nombre": "Aaron Cancho Vicente",
+    "dni": "70909526C",
+    "password": "70909526C",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
+
+  {
+    "id": 20,
+    "numero": "020",
+    "nombre": "Francisco Rajas Diaz",
+    "dni": "77714241R",
+    "password": "77714241R",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
+
+  {
+    "id": 21,
+    "numero": "021",
+    "nombre": "Antonio España Ruiz",
+    "dni": "25719724C",
+    "password": "25719724C",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
+  },
+
+  {
+    "id": 22,
+    "numero": "022",
+    "nombre": "Manuel Jesus Silvan Muñoz",
+    "dni": "47512990G",
+    "password": "47512990G",
+    "cambiarPassword": true,
+    "estado": "ACTIVO",
+    "cuota": "PAGADA",
+    "rol": "SOCIO"
   }
 ]
