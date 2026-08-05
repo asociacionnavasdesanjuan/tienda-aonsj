@@ -60,6 +60,8 @@ function agregarAlCarrito(producto){
     }
 
     guardarCarrito();
+    actualizarContador();
+actualizarCarrito();
     //======================================
 // MOSTRAR CARRITO
 //======================================
