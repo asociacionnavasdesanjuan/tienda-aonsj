@@ -14,31 +14,58 @@
 
 <body>
 
-<header>
+<div class="login">
 
-<img src="LOGO.png" class="logo">
+<img src="LOGO.png" alt="Logo Asociación" class="logoLogin">
 
-<h1>Asociación Ornitológica de Navas de San Juan</h1>
+<h1>👨‍💼 Acceso de Administradores</h1>
 
-<p>Acceso al Panel de Administración</p>
+<h3>Asociación Ornitológica de Navas de San Juan</h3>
 
-</header>
+<p class="textoAcceso">
 
-<main>
+🔒 Acceso exclusivo para administradores autorizados
 
-<h2>🔐 Acceso Administrador</h2>
+</p>
+
+<div class="campoLogin">
+
+<label for="usuarioAdmin">Usuario</label>
 
 <input
 type="text"
 id="usuarioAdmin"
-placeholder="Usuario">
+placeholder="Escriba su usuario"
+autocomplete="username">
+
+</div>
+
+<div class="campoLogin">
+
+<label for="passwordAdmin">Contraseña</label>
+
+<div class="contenedorPassword">
 
 <input
 type="password"
 id="passwordAdmin"
-placeholder="Contraseña">
+placeholder="Escriba su contraseña"
+autocomplete="current-password">
 
-<button id="entrarAdmin">
+<button
+type="button"
+id="verPasswordAdmin"
+class="botonOjo">
+
+👁️
+
+</button>
+
+</div>
+
+</div>
+
+<button id="entrarAdmin" class="botonEntrar">
 
 ENTRAR
 
@@ -46,9 +73,32 @@ ENTRAR
 
 <p id="mensajeAdmin"></p>
 
-</main>
+</div>
 
 <script src="js/admin-login.js"></script>
+
+<script>
+
+const passwordAdmin = document.getElementById("passwordAdmin");
+const verPasswordAdmin = document.getElementById("verPasswordAdmin");
+
+verPasswordAdmin.onclick = function(){
+
+    if(passwordAdmin.type==="password"){
+
+        passwordAdmin.type="text";
+        verPasswordAdmin.innerHTML="🙈";
+
+    }else{
+
+        passwordAdmin.type="password";
+        verPasswordAdmin.innerHTML="👁️";
+
+    }
+
+}
+
+</script>
 
 </body>
 
