@@ -38,7 +38,23 @@ const resumenPedido = document.getElementById("resumenPedido");
 const cancelarPedido = document.getElementById("cancelarPedido");
 
 if(revisarPedido){
+if(cancelarPedido){
 
+    cancelarPedido.onclick = ()=>{
+
+        ventanaConfirmar.style.display = "none";
+
+    };
+
+}
+
+    cancelarPedido.onclick = ()=>{
+
+        ventanaConfirmar.style.display = "none";
+
+    };
+
+}
     revisarPedido.onclick = ()=>{
 
         if(carrito.length===0){
