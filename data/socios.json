@@ -8,7 +8,7 @@
     "cambiarPassword": true,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
-    "rol": "SOCIO"
+  "rol": "ADMIN_PRINCIPAL"
   },
   {
     "id": 4,
