@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gestión de Pedidos</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<img src="LOGO.png" class="logo">
+
+<h1>Asociación Ornitológica de Navas de San Juan</h1>
+
+<p>Gestión de Pedidos</p>
+
+</header>
+
+<main>
+
+<h2>📦 Gestión de Pedidos</h2>
+
+<div class="resumenPedidos">
+
+<div class="tarjetaResumen">
+
+<h3>🟢 Pagados</h3>
+
+<h1 id="totalPagados">0</h1>
+
+</div>
+
+<div class="tarjetaResumen">
+
+<h3>🟡 Pendientes de pago</h3>
+
+<h1 id="totalPendientes">0</h1>
+
+</div>
+
+</div>
+
+<br>
+
+<input
+type="text"
+id="buscarPedido"
+placeholder="Buscar pedido o socio...">
+
+<br><br>
+
+<table id="tablaPedidos">
+
+<thead>
+
+<tr>
+
+<th>Pedido</th>
+
+<th>Socio</th>
+
+<th>Fecha</th>
+
+<th>Total</th>
+
+<th>Pago</th>
+
+<th>Acción</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</main>
+
+<script src="js/pedidos.js"></script>
+
+</body>
+
+</html>
