@@ -33,6 +33,41 @@ const totalCarrito = document.getElementById("totalCarrito");
 const btnWhatsapp = document.getElementById("btnWhatsapp");
 const vaciarCarrito = document.getElementById("vaciarCarrito");
 const revisarPedido = document.getElementById("revisarPedido");
+if(revisarPedido){
+
+    revisarPedido.onclick = ()=>{
+
+        if(carrito.length===0){
+
+            alert("El carrito está vacío.");
+            return;
+
+        }
+
+        let resumen = "<h3>📋 Revisión del pedido</h3><hr>";
+
+        carrito.forEach(producto=>{
+
+            resumen += `
+                <p>
+                    <strong>${producto.nombre}</strong><br>
+                    Cantidad: ${producto.cantidad}<br>
+                    Precio: ${producto.precio.toFixed(2)} €
+                </p>
+                <hr>
+            `;
+
+        });
+
+        resumen += `<h3>Total: ${totalCarrito.textContent}</h3>`;
+
+        resumenPedido.innerHTML = resumen;
+
+        ventanaConfirmar.style.display = "flex";
+
+    };
+
+}
 const ventanaConfirmar = document.getElementById("confirmarPedido");
 const resumenPedido = document.getElementById("resumenPedido");
 const cancelarPedido = document.getElementById("cancelarPedido");
