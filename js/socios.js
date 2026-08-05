@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function cargarSocios(){
 
-        fetch("data/socios.json")
+      fetch("./data/socios.json")
 
         .then(respuesta => respuesta.json())
 
