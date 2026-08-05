@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "nombre": "Francisco García Mendoza",
+    "usuario": "francisco",
+    "password": "AONSJ2026",
+    "cargo": "Presidente",
+    "activo": true,
+    "permisos": {
+      "socios": true,
+      "productos": true,
+      "pedidos": true,
+      "cuotas": true,
+      "configuracion": true,
+      "administradores": true,
+      "pagos": true
+    }
+  }
+]
