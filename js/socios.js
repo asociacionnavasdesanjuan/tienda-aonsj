@@ -39,3 +39,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 });
+// =====================================
+// VENTANA NUEVO SOCIO
+// =====================================
+
+const botonNuevo = document.getElementById("nuevoSocio");
+const ventana = document.getElementById("ventanaSocio");
+const cerrar = document.getElementById("cerrarVentana");
+
+if (botonNuevo) {
+
+    botonNuevo.onclick = () => {
+
+        ventana.style.display = "flex";
+
+    };
+
+}
+
+if (cerrar) {
+
+    cerrar.onclick = () => {
+
+        ventana.style.display = "none";
+
+    };
+
+}
