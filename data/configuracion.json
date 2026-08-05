@@ -1,0 +1,28 @@
+{
+  "asociacion": {
+    "nombre": "Asociación Ornitológica de Navas de San Juan",
+    "direccion": "",
+    "codigoPostal": "",
+    "localidad": "Navas de San Juan",
+    "provincia": "Jaén",
+    "nif": "",
+    "telefono": "",
+    "whatsapp": "640868527",
+    "email": "asociacionornitologicanavasdesanjuan@hotmail.com",
+    "web": "",
+    "iban": "",
+    "federacion": ""
+  },
+
+  "tienda": {
+    "pedidoMinimo": 0,
+    "gastosEnvio": 0,
+    "mensajePedido": "Gracias por confiar en la Asociación Ornitológica de Navas de San Juan."
+  },
+
+  "pagos": {
+    "pasarela": "",
+    "bizum": "",
+    "cuentaBancaria": ""
+  }
+}
