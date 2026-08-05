@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Administradores</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<script>
+
+const admin = localStorage.getItem("admin");
+
+if(admin !== "SI"){
+
+    window.location.href="admin-login.html";
+
+}
+
+</script>
+
+<header>
+
+<img src="LOGO.png" class="logo">
+
+<h1>Asociación Ornitológica de Navas de San Juan</h1>
+
+<p>Gestión de Administradores</p>
+
+</header>
+
+<main>
+
+<h2>👨‍💼 Administradores</h2>
+
+<input
+type="text"
+id="buscarAdministrador"
+placeholder="Buscar administrador...">
+
+<br><br>
+
+<button id="nuevoAdministrador">
+
+➕ Nuevo Administrador
+
+</button>
+
+<br><br>
+
+<table id="tablaAdministradores">
+
+<thead>
+
+<tr>
+
+<th>Nombre</th>
+
+<th>Cargo</th>
+
+<th>Estado</th>
+
+<th>Acciones</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Francisco García Mendoza</td>
+
+<td>👑 Presidente</td>
+
+<td>🟢 Activo</td>
+
+<td>
+
+<button>✏️</button>
+
+<button disabled>🗑️</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</main>
+
+<script src="js/administradores.js"></script>
+
+</body>
+
+</html>
