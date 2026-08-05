@@ -195,3 +195,115 @@ if(cerrar){
     };
 
 }
+// =============================
+// GUARDAR NUEVO SOCIO
+// =============================
+
+const guardarNuevo = document.getElementById("guardarNuevoSocio");
+
+
+if(guardarNuevo){
+
+
+    guardarNuevo.onclick = async ()=>{
+
+
+        const nombre = document.getElementById("nuevoNombre").value.trim();
+
+        const dni = document.getElementById("nuevoDni").value.trim();
+
+        const telefono = document.getElementById("nuevoTelefono").value.trim();
+
+        const email = document.getElementById("nuevoEmail").value.trim();
+
+        const direccion = document.getElementById("nuevaDireccion").value.trim();
+
+        const cp = document.getElementById("nuevoCp").value.trim();
+
+        const poblacion = document.getElementById("nuevoPoblacion").value.trim();
+
+        const provincia = document.getElementById("nuevoProvincia").value.trim();
+
+
+
+        if(!nombre || !dni){
+
+            alert("El nombre y el DNI son obligatorios.");
+
+            return;
+
+        }
+
+
+
+        const respuesta = await fetch("./data/socios.json");
+
+        const socios = await respuesta.json();
+
+
+
+        let numeros = socios.map(s => Number(s.numero));
+
+
+        let siguiente = Math.max(...numeros) + 1;
+
+
+
+        let numeroNuevo = String(siguiente).padStart(3,"0");
+
+
+
+        const nuevoSocio = {
+
+
+            id: siguiente,
+
+            numero: numeroNuevo,
+
+            nombre: nombre,
+
+            dni: dni,
+
+            password: dni,
+
+            telefono: telefono,
+
+            email: email,
+
+            direccion: direccion,
+
+            cp: cp,
+
+            poblacion: poblacion,
+
+            provincia: provincia,
+
+            cambiarPassword: true,
+
+            estado: "ACTIVO",
+
+            cuota: "PENDIENTE",
+
+            rol: "SOCIO"
+
+
+        };
+
+
+
+        console.log("Nuevo socio preparado:", nuevoSocio);
+
+
+
+        alert(
+            "Socio creado correctamente: Nº " + numeroNuevo
+        );
+
+
+        ventana.style.display="none";
+
+
+    };
+
+
+}
