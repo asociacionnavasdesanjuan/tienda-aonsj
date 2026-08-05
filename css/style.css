@@ -933,3 +933,57 @@ VENTANA EMERGENTE
     margin:8px 0;
 
 }
+/*======================================
+PANEL DE ADMINISTRACIÓN
+======================================*/
+
+.panelAdmin{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:30px;
+
+}
+
+.tarjetaAdmin{
+
+    background:#ffffff;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    text-decoration:none;
+    color:#222;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+
+}
+
+.tarjetaAdmin:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.icono{
+
+    font-size:60px;
+    display:block;
+    margin-bottom:15px;
+
+}
+
+.tarjetaAdmin h3{
+
+    color:#1f6b37;
+    margin-bottom:10px;
+
+}
+
+.tarjetaAdmin p{
+
+    color:#666;
+    font-size:15px;
+
+}
