@@ -37,24 +37,12 @@ const ventanaConfirmar = document.getElementById("confirmarPedido");
 const resumenPedido = document.getElementById("resumenPedido");
 const cancelarPedido = document.getElementById("cancelarPedido");
 
+//======================================
+// REVISAR PEDIDO
+//======================================
+
 if(revisarPedido){
-if(cancelarPedido){
 
-    cancelarPedido.onclick = ()=>{
-
-        ventanaConfirmar.style.display = "none";
-
-    };
-
-}
-
-    cancelarPedido.onclick = ()=>{
-
-        ventanaConfirmar.style.display = "none";
-
-    };
-
-}
     revisarPedido.onclick = ()=>{
 
         if(carrito.length===0){
@@ -89,12 +77,18 @@ if(cancelarPedido){
 
 }
 
-//======================================
+if(cancelarPedido){
 
-function guardarCarrito(){
+    cancelarPedido.onclick = ()=>{
+
+        ventanaConfirmar.style.display = "none";
+
+    };
+
+}
     localStorage.setItem("carrito",JSON.stringify(carrito));
 }
-
+function guardarCarrito(){
 //======================================
 
 if (botonCarrito && panelCarrito) {
