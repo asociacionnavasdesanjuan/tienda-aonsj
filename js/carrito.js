@@ -1,10 +1,11 @@
-
 // ======================================
 // CARRITO DE LA TIENDA
 // Asociación Ornitológica de Navas de San Juan
 // ======================================
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+const contador = document.getElementById("contador");
 
 //======================================
 
@@ -16,9 +17,27 @@ function guardarCarrito(){
 
 //======================================
 
+function actualizarContador(){
+
+    if(!contador) return;
+
+    let total = 0;
+
+    carrito.forEach(producto=>{
+
+        total += producto.cantidad;
+
+    });
+
+    contador.textContent = total;
+
+}
+
+//======================================
+
 function agregarAlCarrito(producto){
 
-    const existe = carrito.find(p => p.id === producto.id);
+    const existe = carrito.find(p=>p.id===producto.id);
 
     if(existe){
 
@@ -39,7 +58,10 @@ function agregarAlCarrito(producto){
     }
 
     guardarCarrito();
+    actualizarContador();
 
     alert(producto.nombre + " añadido al carrito.");
 
 }
+
+actualizarContador();
