@@ -22,23 +22,54 @@
 
 <h3>Asociación Ornitológica de Navas de San Juan</h3>
 
-<p>
-
-Acceso exclusivo para socios
-
+<p class="textoAcceso">
+🔒 Acceso exclusivo para socios
 </p>
+
+
+<!-- USUARIO -->
+
+<div class="campoLogin">
+
+<label for="usuario">Número de socio</label>
 
 <input
 type="text"
 id="usuario"
-placeholder="Número de socio">
+placeholder="Ejemplo: 001"
+autocomplete="username">
+
+</div>
+
+
+<!-- CONTRASEÑA -->
+
+<div class="campoLogin">
+
+<label for="password">Contraseña</label>
+
+<div class="contenedorPassword">
 
 <input
 type="password"
 id="password"
-placeholder="Contraseña">
+placeholder="Escribe tu contraseña"
+autocomplete="current-password">
 
-<button id="entrar">
+<button
+type="button"
+id="verPassword"
+class="botonOjo"
+aria-label="Mostrar contraseña">
+👁️
+</button>
+
+</div>
+
+</div>
+
+
+<button id="entrar" class="botonEntrar">
 
 ENTRAR
 
@@ -48,7 +79,33 @@ ENTRAR
 
 </div>
 
+
 <script src="js/login.js"></script>
+
+<script>
+
+const password = document.getElementById("password");
+const botonVer = document.getElementById("verPassword");
+
+botonVer.addEventListener("click", () => {
+
+    if (password.type === "password") {
+
+        password.type = "text";
+        botonVer.textContent = "🙈";
+        botonVer.setAttribute("aria-label", "Ocultar contraseña");
+
+    } else {
+
+        password.type = "password";
+        botonVer.textContent = "👁️";
+        botonVer.setAttribute("aria-label", "Mostrar contraseña");
+
+    }
+
+});
+
+</script>
 
 </body>
 
