@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+  
+alert("ficha funcionando");
 
 const datos = document.getElementById("datosSocio");
 
