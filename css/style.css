@@ -189,6 +189,15 @@ right:0;
 }
 
 .cabeceraCarrito{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    background:#fff;
+    z-index:10000;
+    padding:10px 0;
+}
 
 background:#1f6b37;
 
