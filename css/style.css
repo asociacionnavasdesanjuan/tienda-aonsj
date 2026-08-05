@@ -1293,3 +1293,53 @@ VENTANA CONFIRMAR PEDIDO
     background:#2d8c49;
 
 }
+/*======================================
+PANEL CARRITO
+======================================*/
+
+.panelCarrito{
+
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    max-width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -5px 0 20px rgba(0,0,0,.25);
+    transition: right .3s ease;
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 20px;
+
+}
+
+.panelCarrito.abierto{
+
+    right: 0;
+
+}
+
+.cabeceraCarrito{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+#cerrarCarrito{
+
+    cursor:pointer;
+    font-size:20px;
+    border:none;
+    background:none;
+
+}
+
+.pieCarrito{
+
+    margin-top:20px;
+
+}
