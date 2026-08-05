@@ -896,3 +896,40 @@ CATEGORÍAS
     background:#a71d1d;
 
 }
+/*======================================
+VENTANA EMERGENTE
+======================================*/
+
+.modal{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.modalContenido{
+
+    background:white;
+    width:500px;
+    max-width:90%;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+
+}
+
+.modalContenido input{
+
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+
+}
