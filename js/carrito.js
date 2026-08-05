@@ -236,16 +236,26 @@ if(btnWhatsapp){
             return;
 
         }
-const nombre = document.getElementById("nombreCliente").value;
-const telefono = document.getElementById("telefonoCliente").value;
+const socio = JSON.parse(localStorage.getItem("socio"));
+
 const observaciones = document.getElementById("observaciones").value;
         let mensaje = "🟢 *PEDIDO TIENDA OFICIAL AONSJ*%0A";
 mensaje += "━━━━━━━━━━━━━━━━━━%0A%0A";
-mensaje += "👤 *DATOS DEL CLIENTE*%0A";
+mensaje += "👤 *DATOS DEL SOCIO*%0A";
 
-mensaje += "Nombre: " + nombre + "%0A";
+mensaje += "Nº Socio: " + socio.numero + "%0A";
 
-mensaje += "Teléfono: " + telefono + "%0A";
+mensaje += "Nombre: " + socio.nombre + "%0A";
+
+mensaje += "Teléfono: " + socio.telefono + "%0A%0A";
+
+mensaje += "📦 *DIRECCIÓN DE ENVÍO*%0A";
+
+mensaje += socio.direccion + "%0A";
+
+mensaje += socio.cp + " - " + socio.poblacion + "%0A";
+
+mensaje += socio.provincia + "%0A";
 
 if (observaciones !== "") {
 
