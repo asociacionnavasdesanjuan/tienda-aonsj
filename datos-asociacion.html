@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Datos de la Asociación</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<script>
+
+if(localStorage.getItem("admin")!="SI"){
+
+location.href="admin-login.html";
+
+}
+
+</script>
+
+<header>
+
+<img src="LOGO.png" class="logo">
+
+<h1>Asociación Ornitológica de Navas de San Juan</h1>
+
+<p>Datos de la Asociación</p>
+
+</header>
+
+<main>
+
+<h2>🏛️ Datos de la Asociación</h2>
+
+<form id="formAsociacion">
+
+<label>Nombre de la Asociación</label>
+<input type="text" id="nombre">
+
+<label>Dirección</label>
+<input type="text" id="direccion">
+
+<label>Localidad</label>
+<input type="text" id="localidad">
+
+<label>Provincia</label>
+<input type="text" id="provincia">
+
+<label>Código Postal</label>
+<input type="text" id="cp">
+
+<label>NIF</label>
+<input type="text" id="nif">
+
+<label>Teléfono</label>
+<input type="text" id="telefono">
+
+<label>WhatsApp</label>
+<input type="text" id="whatsapp">
+
+<label>Correo electrónico</label>
+<input type="email" id="email">
+
+<label>Página web</label>
+<input type="text" id="web">
+
+<br><br>
+
+<button type="button" id="guardarDatos">
+
+💾 Guardar Cambios
+
+</button>
+
+</form>
+
+</main>
+
+<script src="js/datos-asociacion.js"></script>
+
+</body>
+
+</html>
