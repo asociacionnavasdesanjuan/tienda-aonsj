@@ -13,7 +13,17 @@
 </head>
 
 <body>
+<script>
 
+const admin = localStorage.getItem("admin");
+
+if(admin !== "SI"){
+
+    window.location.href = "admin-login.html";
+
+}
+
+</script>
 <header>
 
 <img src="LOGO.png" class="logo">
