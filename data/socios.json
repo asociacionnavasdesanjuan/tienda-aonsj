@@ -221,11 +221,18 @@
   "nombre": "Cristian García Díaz",
   "carnet": "CRISTIAN GARCIA DIAZ.pdf",
   "dni": "26528511N",
+  "telefono": "",
+  "email": "",
+  "direccion": "",
+  "cp": "",
+  "poblacion": "NAVAS DE SAN JUAN",
+  "provincia": "JAÉN",
   "password": "26528511N",
-  "cambiarPassword": true,
+  "cambiarPassword": false,
   "estado": "ACTIVO",
   "cuota": "PAGADA",
-  "rol": "SOCIO"
+  "rol": "ADMIN",
+  "cargo": "TESORERO"
 },
 {
   "id": 3,
