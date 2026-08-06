@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("cp").value = socio.cp || "";
     document.getElementById("poblacion").value = socio.poblacion || "";
     document.getElementById("provincia").value = socio.provincia || "";
+    document.getElementById("cuota").value = socio.cuota || "";
     
 const botonCarnet = document.querySelector('a[href="mi-carnet.html"]');
 
