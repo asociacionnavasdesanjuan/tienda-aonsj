@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <iframe
 
-src="carnets/${socio.nombre}.pdf"
+src="carnets/${socio.nombre.toUpperCase()}.pdf"
 
     width="100%"
 
