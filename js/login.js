@@ -1,11 +1,10 @@
 document.getElementById("entrar").addEventListener("click", entrar);
 
-async function entrar() {
+async function entrar(){
 
     const usuario = document.getElementById("usuario").value.trim();
     const password = document.getElementById("password").value.trim();
     const mensaje = document.getElementById("mensaje");
-
 
     try {
 
@@ -13,26 +12,25 @@ async function entrar() {
 
         const socios = await respuesta.json();
 
-
         const socio = socios.find(s =>
             s.numero === usuario &&
-            s.password.toUpperCase() === password.toUpperCase()
+            s.password === password
         );
 
 
-        if (!socio) {
+        if(!socio){
 
-            mensaje.style.color = "red";
-            mensaje.textContent = "Número de socio o contraseña incorrectos.";
+            mensaje.style.color="red";
+            mensaje.textContent="Número de socio o contraseña incorrectos.";
             return;
 
         }
 
 
-        if (socio.estado !== "ACTIVO") {
+        if(socio.estado !== "ACTIVO"){
 
-            mensaje.style.color = "red";
-            mensaje.textContent = "Este socio no tiene acceso activo.";
+            mensaje.style.color="red";
+            mensaje.textContent="Socio no activo.";
             return;
 
         }
@@ -44,26 +42,23 @@ async function entrar() {
         );
 
 
-        if (
-            socio.rol === "ADMIN" ||
-            socio.rol === "ADMIN_PRINCIPAL"
-        ) {
+        if(socio.rol === "ADMIN"){
 
-            window.location.href = "admin.html";
+            window.location.href="admin.html";
 
-        } else {
+        }else{
 
-            window.location.href = "tienda.html";
+            window.location.href="tienda.html";
 
         }
 
 
-    } catch (error) {
+    }catch(error){
 
         console.error(error);
 
-        mensaje.style.color = "red";
-        mensaje.textContent = "Error al comprobar los datos.";
+        mensaje.style.color="red";
+        mensaje.textContent="Error cargando socios.";
 
     }
 
