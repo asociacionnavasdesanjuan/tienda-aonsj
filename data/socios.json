@@ -3,6 +3,7 @@
     "id": 1,
     "numero": "001",
     "nombre": "Francisco García Mendoza",
+    "carnet": "FRANCISCO GARCIA MENDOZA.pdf",
     "dni": "70578425G",
     "password": "70578425G",
    "cambiarPassword": false,
