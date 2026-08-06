@@ -1,43 +1,13 @@
-document.getElementById("entrar").addEventListener("click", entrar);
+window.onload = function(){
 
-async function entrar() {
+    const boton = document.getElementById("entrar");
 
-    const usuario = document.getElementById("usuario").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const mensaje = document.getElementById("mensaje");
+    alert("LOGIN CARGADO");
 
-    try {
+    boton.onclick = function(){
 
-        const respuesta = await fetch("data/socios.json");
-        const socios = await respuesta.json();
+        alert("BOTON PULSADO");
 
-        const socio = socios.find(s =>
+    };
 
-            s.numero === usuario &&
-            s.password === password
-
-        );
-
-        if (socio) {
-
-            localStorage.setItem("socio", JSON.stringify(socio));
-
-            window.location.href = "tienda.html";
-
-        } else {
-
-            mensaje.style.color = "red";
-            mensaje.textContent = "Número de socio o contraseña incorrectos.";
-
-        }
-
-    } catch (error) {
-
-        mensaje.style.color = "red";
-        mensaje.textContent = "Error al comprobar los datos.";
-
-        console.error(error);
-
-    }
-
-}
+};
