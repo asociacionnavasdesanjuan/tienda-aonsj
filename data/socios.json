@@ -208,7 +208,7 @@
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
-  }
+  },
 ]
 {
   "id": 2,
@@ -221,7 +221,7 @@
   "estado": "ACTIVO",
   "cuota": "PAGADA",
   "rol": "SOCIO"
-}
+},
 {
   "id": 3,
   "numero": "003",
@@ -233,4 +233,4 @@
   "estado": "ACTIVO",
   "cuota": "PAGADA",
   "rol": "SOCIO"
-}
+},
