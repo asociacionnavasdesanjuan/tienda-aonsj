@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <h3>🪪 Carné del socio</h3>
 
-<a href="carnets/${socio.numero}.pdf" target="_blank">
+<a href="carnets/${socio.nombre.toUpperCase()}.pdf" target="_blank">
 
 <button>
 📄 Ver mi carné
