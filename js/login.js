@@ -1,13 +1,65 @@
-window.onload = function(){
+document.getElementById("entrar").addEventListener("click", entrar);
 
-    const boton = document.getElementById("entrar");
+async function entrar() {
 
-    alert("LOGIN CARGADO");
+    const usuario = document.getElementById("usuario").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const mensaje = document.getElementById("mensaje");
 
-    boton.onclick = function(){
+    try {
 
-        alert("BOTON PULSADO");
+        const respuesta = await fetch("./data/socios.json");
 
-    };
+        const socios = await respuesta.json();
 
-};
+        const socio = socios.find(s =>
+            s.numero === usuario &&
+            s.password === password
+        );
+
+
+        if (!socio) {
+
+            mensaje.style.color = "red";
+            mensaje.textContent = "Número de socio o contraseña incorrectos.";
+            return;
+
+        }
+
+
+        if (socio.estado !== "ACTIVO") {
+
+            mensaje.style.color = "red";
+            mensaje.textContent = "Socio inactivo.";
+            return;
+
+        }
+
+
+        localStorage.setItem("socio", JSON.stringify(socio));
+
+
+        if (
+            socio.rol === "ADMIN" ||
+            socio.rol === "ADMIN_PRINCIPAL"
+        ) {
+
+            window.location.href = "admin.html";
+
+        } else {
+
+            window.location.href = "tienda.html";
+
+        }
+
+
+    } catch(error) {
+
+        console.error(error);
+
+        mensaje.style.color = "red";
+        mensaje.textContent = "Error cargando datos.";
+
+    }
+
+}
