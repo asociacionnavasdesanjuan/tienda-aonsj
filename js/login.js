@@ -66,15 +66,23 @@ async function entrar() {
 
 
 
-        if(socio.cambiarPassword === true){
+   if(
+socio.rol === "ADMIN" ||
+socio.rol === "ADMIN_PRINCIPAL"
+){
+
+    window.location.href =
+    "admin.html";
 
 
-            window.location.href =
-            "cambiar-password.html";
+}else{
 
 
-        }else{
+    window.location.href =
+    "tienda.html";
 
+
+}
 
             if(
             socio.rol === "ADMIN" ||
