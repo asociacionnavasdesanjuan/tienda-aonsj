@@ -1,3 +1,4 @@
+alert("ESTE ES EL LOGIN NUEVO");
 document.getElementById("entrar").addEventListener("click", entrar);
 
 async function entrar() {
