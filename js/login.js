@@ -3,7 +3,6 @@ document.getElementById("entrar").addEventListener("click", entrar);
 
 async function entrar() {
 
-
     const usuario = document.getElementById("usuario").value.trim();
 
     const password = document.getElementById("password").value.trim();
@@ -13,50 +12,35 @@ async function entrar() {
 
     try {
 
-
         const respuesta = await fetch("./data/socios.json");
-
 
         const socios = await respuesta.json();
 
 
-
         const socio = socios.find(s =>
-
             s.numero === usuario &&
-
             s.password.toUpperCase() === password.toUpperCase()
-
         );
-
 
 
         if (!socio) {
 
-
             mensaje.style.color = "red";
-
             mensaje.textContent =
             "Número de socio o contraseña incorrectos.";
 
             return;
-
         }
 
 
-
-        if(socio.estado !== "ACTIVO"){
-
+        if (socio.estado !== "ACTIVO") {
 
             mensaje.style.color = "red";
-
             mensaje.textContent =
             "Este socio no tiene acceso activo.";
 
             return;
-
         }
-
 
 
         localStorage.setItem(
@@ -65,60 +49,29 @@ async function entrar() {
         );
 
 
-
-   if(
-socio.rol === "ADMIN" ||
-socio.rol === "ADMIN_PRINCIPAL"
-){
-
-    window.location.href =
-    "admin.html";
-
-
-}else{
-
-
-    window.location.href =
-    "tienda.html";
-
-
-}
-
-            if(
+        if (
             socio.rol === "ADMIN" ||
             socio.rol === "ADMIN_PRINCIPAL"
-            ){
+        ) {
 
-                window.location.href =
-                "admin.html";
+            window.location.href = "admin.html";
 
+        } else {
 
-            }else{
-
-
-                window.location.href =
-                "tienda.html";
-
-
-            }
+            window.location.href = "tienda.html";
 
         }
 
 
-
-    } catch(error){
-
+    } catch(error) {
 
         console.error(error);
-
 
         mensaje.style.color="red";
 
         mensaje.textContent =
         "Error al comprobar los datos.";
 
-
     }
-
 
 }
