@@ -1,5 +1,7 @@
-document.getElementById("entrar").addEventListener("click", function(){
+alert("LOGIN.JS CARGADO");
 
-    alert("EL BOTÓN FUNCIONA");
+document.getElementById("entrar").onclick = function(){
 
-});
+    alert("BOTON ENTRAR FUNCIONA");
+
+};
