@@ -231,5 +231,22 @@
   "cuota": "PAGADA",
   "rol": "ADMIN",
   "cargo": "SECRETARIO"
-}
+},
+{
+  "id": 0,
+  "numero": "000",
+  "nombre": "Francisco García Mendoza (Socio Prueba)",
+  "carnet": "FRANCISCO GARCIA MENDOZA.pdf",
+  "dni": "70578425G",
+  "telefono": "",
+  "email": "",
+  "direccion": "",
+  "cp": "",
+  "poblacion": "NAVAS DE SAN JUAN",
+  "provincia": "JAÉN",
+  "password": "70578425G",
+  "estado": "ACTIVO",
+  "cuota": "PAGADA",
+  "rol": "SOCIO"
+}  
 ]
