@@ -1,12 +1,10 @@
 document.getElementById("entrar").addEventListener("click", entrar);
 
-
 async function entrar() {
 
     const usuario = document.getElementById("usuario").value.trim();
     const password = document.getElementById("password").value.trim();
     const mensaje = document.getElementById("mensaje");
-
 
     try {
 
@@ -14,12 +12,10 @@ async function entrar() {
 
         const socios = await respuesta.json();
 
-
         const socio = socios.find(s =>
             s.numero === usuario &&
             s.password.toUpperCase() === password.toUpperCase()
         );
-
 
         if (!socio) {
 
@@ -30,7 +26,6 @@ async function entrar() {
             return;
         }
 
-
         if (socio.estado !== "ACTIVO") {
 
             mensaje.style.color = "red";
@@ -39,7 +34,6 @@ async function entrar() {
 
             return;
         }
-
 
         localStorage.setItem(
             "socio",
@@ -61,12 +55,11 @@ async function entrar() {
         }
 
 
-    } catch (error) {
+    } catch(error) {
 
         console.error(error);
 
         mensaje.style.color = "red";
-
         mensaje.textContent =
         "Error al comprobar los datos.";
 
