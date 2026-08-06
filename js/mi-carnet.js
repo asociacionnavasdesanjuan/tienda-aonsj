@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <iframe
 
-    src="carnets/${socio.numero}.pdf"
+src="carnets/${socio.nombre}.pdf"
 
     width="100%"
 
