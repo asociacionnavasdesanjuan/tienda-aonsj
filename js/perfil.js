@@ -16,5 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("cp").value = socio.cp || "";
     document.getElementById("poblacion").value = socio.poblacion || "";
     document.getElementById("provincia").value = socio.provincia || "";
+    
+const botonCarnet = document.querySelector('a[href="mi-carnet.html"]');
 
+if(botonCarnet){
+
+    botonCarnet.href = "carnets/" + socio.carnet;
+
+}
+    
 });
