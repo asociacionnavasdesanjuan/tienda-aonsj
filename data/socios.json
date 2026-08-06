@@ -210,3 +210,15 @@
     "rol": "SOCIO"
   }
 ]
+{
+  "id": 2,
+  "numero": "002",
+  "nombre": "Cristian García Díaz",
+  "carnet": "CRISTIAN GARCIA DIAZ.pdf",
+  "dni": "26528511N",
+  "password": "26528511N",
+  "cambiarPassword": true,
+  "estado": "ACTIVO",
+  "cuota": "PAGADA",
+  "rol": "SOCIO"
+}
