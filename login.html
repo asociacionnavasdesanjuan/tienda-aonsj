@@ -1,7 +1,164 @@
-alert("LOGIN CARGADO");
+<!DOCTYPE html>
+<html lang="es">
 
-document.getElementById("entrar").onclick = function(){
+<head>
 
-    alert("BOTON FUNCIONA");
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-};
+<title>Tienda Oficial del Socio</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="login">
+
+
+<img src="LOGO.png" alt="Logo Asociación" class="logoLogin">
+
+
+<h1>🛒 Tienda Oficial del Socio</h1>
+
+<h3>Asociación Ornitológica de Navas de San Juan</h3>
+
+
+<p class="textoAcceso">
+🔒 Acceso exclusivo para socios
+</p>
+
+
+
+<div class="campoLogin">
+
+
+<label for="usuario">
+Número de socio
+</label>
+
+
+<input
+type="text"
+id="usuario"
+placeholder="Ejemplo: 001"
+autocomplete="username">
+
+
+</div>
+
+
+
+
+
+<div class="campoLogin">
+
+
+<label for="password">
+Contraseña
+</label>
+
+
+
+<div class="contenedorPassword">
+
+
+<input
+type="password"
+id="password"
+placeholder="Escribe tu contraseña"
+autocomplete="current-password">
+
+
+
+<button
+type="button"
+id="verPassword"
+class="botonOjo">
+
+👁️
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<button 
+id="entrar" 
+class="botonEntrar">
+
+ENTRAR
+
+</button>
+
+
+
+<p id="mensaje"></p>
+
+
+
+</div>
+
+
+
+
+
+<script src="js/login.js?v=3"></script>
+
+
+
+<script>
+
+
+const password = document.getElementById("password");
+
+const botonVer = document.getElementById("verPassword");
+
+
+
+botonVer.addEventListener("click", () => {
+
+
+
+    if(password.type === "password"){
+
+
+        password.type = "text";
+
+        botonVer.textContent = "🙈";
+
+
+    }else{
+
+
+        password.type = "password";
+
+        botonVer.textContent = "👁️";
+
+
+    }
+
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
