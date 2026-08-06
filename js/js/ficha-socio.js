@@ -75,7 +75,7 @@ ${socio.cambiarPassword ? "Pendiente" : "Realizado"}
 
 <h3>🪪 Carné del socio</h3>
 
-<a href="carnets/${socio.nombre.toUpperCase()}.pdf" target="_blank">
+<a href="carnets/FRANCISCO GARCIA MENDOZA.pdf" target="_blank">
 
 <button>
 📄 Ver mi carné
