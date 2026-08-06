@@ -14,7 +14,7 @@ async function entrar() {
 
         const socio = socios.find(s =>
             s.numero === usuario &&
-            s.password === password
+            s.password.toUpperCase() === password.toUpperCase()
         );
 
 
@@ -30,13 +30,16 @@ async function entrar() {
         if (socio.estado !== "ACTIVO") {
 
             mensaje.style.color = "red";
-            mensaje.textContent = "Socio inactivo.";
+            mensaje.textContent = "Este socio no tiene acceso activo.";
             return;
 
         }
 
 
-        localStorage.setItem("socio", JSON.stringify(socio));
+        localStorage.setItem(
+            "socio",
+            JSON.stringify(socio)
+        );
 
 
         if (
@@ -58,7 +61,7 @@ async function entrar() {
         console.error(error);
 
         mensaje.style.color = "red";
-        mensaje.textContent = "Error cargando datos.";
+        mensaje.textContent = "Error al comprobar los datos.";
 
     }
 
