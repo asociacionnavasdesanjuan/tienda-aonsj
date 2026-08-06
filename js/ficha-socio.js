@@ -75,11 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <hr>
 
 
-        <h3>🪪 Carné del socio</h3>
+      <h3>🪪 Carné del socio</h3>
 
-        <p>
-        Pendiente de añadir subida del carné.
-        </p>
+<a href="carnets/${socio.nombre}.pdf" target="_blank">
+
+<button>
+📄 Ver mi carné
+</button>
+
+</a> 
 
 
         `;
