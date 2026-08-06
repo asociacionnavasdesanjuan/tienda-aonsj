@@ -5,7 +5,7 @@
     "nombre": "Francisco García Mendoza",
     "dni": "70578425G",
     "password": "70578425G",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
      "cuota": "PAGADA",
   "rol": "ADMIN_PRINCIPAL"
@@ -16,7 +16,7 @@
     "nombre": "Antonio Manuel Herrera Almijo",
     "dni": "26522119Z",
     "password": "26522119Z",
-    "cambiarPassword": true,
+  "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -27,7 +27,7 @@
     "nombre": "José Navarro Fernández",
     "dni": "27489583Y",
     "password": "27489583Y",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -38,7 +38,7 @@
     "nombre": "José Navarro Moreno",
     "dni": "45600139V",
     "password": "45600139V",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -49,7 +49,7 @@
     "nombre": "Dolores Díaz Munuera",
     "dni": "26243278W",
     "password": "26243278W",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -60,7 +60,7 @@
     "nombre": "José Antonio Gómez Garzón",
     "dni": "24238969M",
     "password": "24238969M",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -71,7 +71,7 @@
     "nombre": "Raúl Hitos Herrera",
     "dni": "75134719K",
     "password": "75134719K",
-    "cambiarPassword": true,
+  "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -82,7 +82,7 @@
     "nombre": "Jaime Navajo Samaniego",
     "dni": "70254073K",
     "password": "70254073K",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -93,7 +93,7 @@
     "nombre": "Adrián González Navidades",
     "dni": "11867128W",
     "password": "11867128W",
-    "cambiarPassword": true,
+  "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -104,7 +104,7 @@
     "nombre": "Sergio Molina Vico",
     "dni": "76143440P",
     "password": "76143440P",
-    "cambiarPassword": true,
+"cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -115,7 +115,7 @@
     "nombre": "Juan Barroso Molina",
     "dni": "26503415D",
     "password": "26503415D",
-    "cambiarPassword": true,
+  "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -126,7 +126,7 @@
     "nombre": "Santiago Jesús Ruiz",
     "dni": "79013008G",
     "password": "79013008G",
-    "cambiarPassword": true,
+ "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -137,7 +137,7 @@
     "nombre": "Francisco Javier Aguilera Pajares",
     "dni": "24232808P",
     "password": "24232808P",
-    "cambiarPassword": true,
+ "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -148,7 +148,7 @@
     "nombre": "Manuel Puertas Molinero",
     "dni": "29084787E",
     "password": "29084787E",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -159,7 +159,7 @@
     "nombre": "José Antonio Dual Rodríguez",
     "dni": "18055485W",
     "password": "18055485W",
-    "cambiarPassword": true,
+    "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -170,7 +170,7 @@
     "nombre": "Aaron Cancho Vicente",
     "dni": "70909526C",
     "password": "70909526C",
-    "cambiarPassword": true,
+    "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -181,7 +181,7 @@
     "nombre": "Francisco Rajas Díaz",
     "dni": "77714241R",
     "password": "77714241R",
-    "cambiarPassword": true,
+    "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -192,7 +192,7 @@
     "nombre": "Antonio España Ruiz",
     "dni": "25719724C",
     "password": "25719724C",
-    "cambiarPassword": true,
+   "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -203,7 +203,7 @@
     "nombre": "Manuel Jesús Silván Muñoz",
     "dni": "47512990G",
     "password": "47512990G",
-    "cambiarPassword": true,
+    "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
