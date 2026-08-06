@@ -17,41 +17,24 @@ async function entrar() {
             s.password === password
         );
 
-
         if (!socio) {
-
             mensaje.style.color = "red";
             mensaje.textContent = "Número de socio o contraseña incorrectos.";
             return;
-
         }
-
 
         if (socio.estado !== "ACTIVO") {
-
             mensaje.style.color = "red";
-            mensaje.textContent = "Socio inactivo.";
+            mensaje.textContent = "Socio no activo.";
             return;
-
         }
 
+        localStorage.setItem(
+            "socio",
+            JSON.stringify(socio)
+        );
 
-        localStorage.setItem("socio", JSON.stringify(socio));
-
-
-        if (
-            socio.rol === "ADMIN" ||
-            socio.rol === "ADMIN_PRINCIPAL"
-        ) {
-
-            window.location.href = "admin.html";
-
-        } else {
-
-            window.location.href = "tienda.html";
-
-        }
-
+        window.location.href = "tienda.html";
 
     } catch(error) {
 
