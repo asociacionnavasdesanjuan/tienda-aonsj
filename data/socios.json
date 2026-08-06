@@ -13,7 +13,7 @@
 "provincia": "JAÉN",
     "password": "70578425G",
     "estado": "ACTIVO",
-     "cuota": "PAGADA",
+     "cuota": "PAGADA"
   "rol": "ADMIN_PRINCIPAL"
   },
   {
@@ -23,7 +23,7 @@
     "dni": "26522119Z",
     "password": "26522119Z",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -33,7 +33,7 @@
     "dni": "27489583Y",
     "password": "27489583Y",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -43,7 +43,7 @@
     "dni": "45600139V",
     "password": "45600139V",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -53,7 +53,7 @@
     "dni": "26243278W",
     "password": "26243278W",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -63,7 +63,7 @@
     "dni": "24238969M",
     "password": "24238969M",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -73,7 +73,7 @@
     "dni": "75134719K",
     "password": "75134719K",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -83,7 +83,7 @@
     "dni": "70254073K",
     "password": "70254073K",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -93,7 +93,7 @@
     "dni": "11867128W",
     "password": "11867128W",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -103,7 +103,7 @@
     "dni": "76143440P",
     "password": "76143440P",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -113,7 +113,7 @@
     "dni": "26503415D",
     "password": "26503415D",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -122,7 +122,7 @@
     "nombre": "Santiago Jesús Ruiz",
     "dni": "79013008G",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -132,7 +132,7 @@
     "dni": "24232808P",
     "password": "24232808P",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -142,7 +142,7 @@
     "dni": "29084787E",
     "password": "29084787E",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -152,7 +152,7 @@
     "dni": "18055485W",
     "password": "18055485W",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -162,7 +162,7 @@
     "dni": "70909526C",
     "password": "70909526C",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -172,7 +172,7 @@
     "dni": "77714241R",
     "password": "77714241R",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -182,7 +182,7 @@
     "dni": "25719724C",
     "password": "25719724C",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
   {
@@ -192,7 +192,7 @@
     "dni": "47512990G",
     "password": "47512990G",
     "estado": "ACTIVO",
-    "cuota": "PAGADA",
+    "cuota": "PAGADA"
     "rol": "SOCIO"
   },
 {
@@ -209,7 +209,7 @@
   "provincia": "JAÉN",
   "password": "26528511N",
   "estado": "ACTIVO",
-  "cuota": "PAGADA",
+  "cuota": "PAGADA"
   "rol": "ADMIN",
   "cargo": "TESORERO"
 },
@@ -227,7 +227,7 @@
   "provincia": "JAÉN",
   "password": "45739682L",
   "estado": "ACTIVO",
-  "cuota": "PAGADA",
+  "cuota": "PAGADA"
   "rol": "ADMIN",
   "cargo": "SECRETARIO"
 },
