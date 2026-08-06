@@ -6,11 +6,13 @@ async function entrar() {
     const password = document.getElementById("password").value.trim();
     const mensaje = document.getElementById("mensaje");
 
+
     try {
 
         const respuesta = await fetch("./data/socios.json");
 
         const socios = await respuesta.json();
+
 
         const socio = socios.find(s =>
             s.numero === usuario &&
@@ -56,7 +58,7 @@ async function entrar() {
         }
 
 
-    } catch(error) {
+    } catch (error) {
 
         console.error(error);
 
