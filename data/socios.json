@@ -240,10 +240,17 @@
   "nombre": "Rafael Morales Sánchez",
   "carnet": "RAFAEL MORALES SANCHEZ.pdf",
   "dni": "45739682L",
+  "telefono": "",
+  "email": "",
+  "direccion": "",
+  "cp": "",
+  "poblacion": "NAVAS DE SAN JUAN",
+  "provincia": "JAÉN",
   "password": "45739682L",
-  "cambiarPassword": true,
+  "cambiarPassword": false,
   "estado": "ACTIVO",
   "cuota": "PAGADA",
-  "rol": "SOCIO"
+  "rol": "ADMIN",
+  "cargo": "SECRETARIO"
 }
 ]
