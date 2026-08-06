@@ -121,7 +121,6 @@
     "numero": "015",
     "nombre": "Santiago Jesús Ruiz",
     "dni": "79013008G",
- "cambiarPassword": false,
     "estado": "ACTIVO",
     "cuota": "PAGADA",
     "rol": "SOCIO"
@@ -246,7 +245,7 @@
   "provincia": "JAÉN",
   "password": "70578425G",
   "estado": "ACTIVO",
-  "cuota": "PAGADA",
+  "cuota": "PAGADA"
   "rol": "SOCIO"
 }  
 ]
