@@ -222,3 +222,15 @@
   "cuota": "PAGADA",
   "rol": "SOCIO"
 }
+{
+  "id": 3,
+  "numero": "003",
+  "nombre": "Rafael Morales Sánchez",
+  "carnet": "RAFAEL MORALES SANCHEZ.pdf",
+  "dni": "45739682L",
+  "password": "45739682L",
+  "cambiarPassword": true,
+  "estado": "ACTIVO",
+  "cuota": "PAGADA",
+  "rol": "SOCIO"
+}
