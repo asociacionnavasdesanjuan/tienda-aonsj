@@ -23,7 +23,9 @@ async function entrar() {
 
 
         const socio = socios.find(s =>
-
+console.log("USUARIO:", usuario);
+console.log("SOCIOS CARGADOS:", socios);
+console.log("SOCIO ENCONTRADO:", socio);
             s.numero === usuario &&
 
             s.password.toUpperCase() === password.toUpperCase()
