@@ -4,9 +4,7 @@ document.getElementById("entrar").addEventListener("click", entrar);
 async function entrar() {
 
     const usuario = document.getElementById("usuario").value.trim();
-
     const password = document.getElementById("password").value.trim();
-
     const mensaje = document.getElementById("mensaje");
 
 
@@ -63,11 +61,11 @@ async function entrar() {
         }
 
 
-    } catch(error) {
+    } catch (error) {
 
         console.error(error);
 
-        mensaje.style.color="red";
+        mensaje.style.color = "red";
 
         mensaje.textContent =
         "Error al comprobar los datos.";
