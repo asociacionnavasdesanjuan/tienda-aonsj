@@ -77,12 +77,9 @@ fetch("./data/pedidos.json")
 
 .catch(error => {
 
+console.error("Error cargando pedidos:", error);
 
-console.error(
-"Error cargando pedidos:",
-error
-);
-
+if(tabla){
 
 tabla.innerHTML = `
 
@@ -90,7 +87,7 @@ tabla.innerHTML = `
 
 <td colspan="6">
 
-Error al cargar los pedidos.
+No hay pedidos registrados.
 
 </td>
 
@@ -98,7 +95,8 @@ Error al cargar los pedidos.
 
 `;
 
-});
+}
 
+});
 
 });
