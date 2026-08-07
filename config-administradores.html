@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Administradores</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<script>
+
+const socio = JSON.parse(localStorage.getItem("socio"));
+
+
+if(!socio){
+
+    window.location.href = "login.html";
+
+}
+
+
+if(
+    socio.rol !== "ADMIN" &&
+    socio.rol !== "ADMIN_PRINCIPAL"
+){
+
+    window.location.href = "tienda.html";
+
+}
+
+</script>
+
+
+<header>
+
+<img src="LOGO.png" class="logo">
+
+<h1>
+Asociación Ornitológica de Navas de San Juan
+</h1>
+
+<p>
+Gestión de Administradores
+</p>
+
+</header>
+
+
+<main>
+
+<h2>👨‍💼 Administradores del Sistema</h2>
+
+
+<div class="panelAdmin">
+
+
+<div class="tarjetaAdmin">
+
+<h3>Francisco García Mendoza</h3>
+
+<p>
+ADMIN PRINCIPAL
+</p>
+
+</div>
+
+
+<div class="tarjetaAdmin">
+
+<h3>Cristian García Díaz</h3>
+
+<p>
+ADMIN - Tesorero
+</p>
+
+</div>
+
+
+<div class="tarjetaAdmin">
+
+<h3>Rafael Morales Sánchez</h3>
+
+<p>
+ADMIN - Secretario
+</p>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+</body>
+
+</html>
