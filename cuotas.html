@@ -16,11 +16,22 @@
 
 <script>
 
-const admin = localStorage.getItem("admin");
+const socio = JSON.parse(localStorage.getItem("socio"));
 
-if(admin !== "SI"){
 
-    window.location.href = "admin-login.html";
+if(!socio){
+
+    window.location.href = "login.html";
+
+}
+
+
+if(
+    socio.rol !== "ADMIN" &&
+    socio.rol !== "ADMIN_PRINCIPAL"
+){
+
+    window.location.href = "tienda.html";
 
 }
 
