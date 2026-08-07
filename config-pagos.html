@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Configuración Pagos</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<script>
+
+const socio = JSON.parse(localStorage.getItem("socio"));
+
+
+if(!socio){
+
+    window.location.href = "login.html";
+
+}
+
+
+if(
+    socio.rol !== "ADMIN" &&
+    socio.rol !== "ADMIN_PRINCIPAL"
+){
+
+    window.location.href = "tienda.html";
+
+}
+
+</script>
+
+
+
+<header>
+
+<img src="LOGO.png" class="logo">
+
+<h1>
+Asociación Ornitológica de Navas de San Juan
+</h1>
+
+<p>
+Configuración de Pagos
+</p>
+
+</header>
+
+
+
+<main>
+
+<h2>💳 Configuración de Pagos</h2>
+
+
+<div class="panelAdmin">
+
+
+<div class="tarjetaAdmin">
+
+<h3>Bizum</h3>
+
+<p>
+Configurar número de Bizum de la asociación.
+</p>
+
+</div>
+
+
+<div class="tarjetaAdmin">
+
+<h3>Cuenta bancaria</h3>
+
+<p>
+Gestionar datos bancarios para pagos.
+</p>
+
+</div>
+
+
+<div class="tarjetaAdmin">
+
+<h3>Cuotas</h3>
+
+<p>
+Control de pagos y cuotas de socios.
+</p>
+
+</div>
+
+
+</div>
+
+
+</main>
+
+
+</body>
+
+</html>
