@@ -39,7 +39,7 @@ async function entrar() {
 
             return;
         }
-
+console.log("SOCIO GUARDADO:", socio);
 
         localStorage.setItem(
             "socio",
