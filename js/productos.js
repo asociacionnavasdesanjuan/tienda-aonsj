@@ -41,7 +41,34 @@ if (salir) {
 }
     const contenedor = document.getElementById("productos");
     const buscador = document.getElementById("buscarProducto");
+// ==========================
+// FILTRO POR CATEGORÍAS
+// ==========================
 
+document.querySelectorAll(".categoria").forEach(boton => {
+
+    boton.addEventListener("click", () => {
+
+        const categoria = boton.dataset.categoria;
+
+        if(categoria === "todos"){
+
+            mostrarProductos(listaProductos);
+
+        } else {
+
+            const filtrados = listaProductos.filter(producto =>
+                producto.categoria === categoria
+            );
+
+            mostrarProductos(filtrados);
+
+        }
+
+
+    });
+
+});
     if (!contenedor) return;
 
     let listaProductos = [];
