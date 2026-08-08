@@ -20,7 +20,8 @@ async function entrar() {
             s.password.trim().toUpperCase() === password.toUpperCase()
         );
 
-
+console.log("SOCIO ENCONTRADO:", socio);
+        
         if (!socio) {
 
             mensaje.style.color = "red";
