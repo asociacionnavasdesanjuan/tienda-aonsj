@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+    
+console.log("PERFIL JS CARGADO");
+    
     const socio = JSON.parse(localStorage.getItem("socio"));
 
     if (!socio) {
