@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log("PERFIL JS CARGADO");
     
     const socio = JSON.parse(localStorage.getItem("socio"));
-
+    
+console.log("SOCIO CARGADO:", socio);
+    
     if (!socio) {
 
         window.location.href = "login.html";
