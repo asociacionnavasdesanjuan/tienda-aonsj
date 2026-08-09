@@ -20,7 +20,22 @@ console.log("SOCIO CARGADO:", socio);
     document.getElementById("cp").value = socio.cp || "";
     document.getElementById("poblacion").value = socio.poblacion || "";
     document.getElementById("provincia").value = socio.provincia || "";
-    document.getElementById("cuota").value = socio.cuota || "";
+const añoActual = new Date().getFullYear();
+
+let estadoCuota = "";
+
+if (socio.cuotas) {
+
+    estadoCuota = socio.cuotas[añoActual] || "PENDIENTE";
+
+} else {
+
+    estadoCuota = socio.cuota || "PENDIENTE";
+
+}
+
+
+document.getElementById("cuota").value = estadoCuota;
     // ===============================
 // ESTADO DEL SOCIO
 // ===============================
