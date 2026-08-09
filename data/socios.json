@@ -371,7 +371,9 @@
   "provincia": "JAÉN",
   "password": "70578425G",
   "estado": "ACTIVO",
-  "cuota": "PAGADA",
+ "cuotas": {
+    "2026": "PAGADA"
+}
   "rol": "SOCIO"
 }  
 ]
