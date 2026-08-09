@@ -74,5 +74,56 @@ if(botonCarnet){
     botonCarnet.href = "carnets/" + socio.carnet;
 
 }
-    
+// ===============================
+// HISTORIAL DE PAGOS
+// ===============================
+
+const historial = document.getElementById("historialPagos");
+
+if(historial){
+
+    pagosSocio(socio.numero)
+    .then(pagos => {
+
+        if(pagos.length === 0){
+
+            historial.innerHTML =
+            "No existen pagos registrados.";
+
+            return;
+
+        }
+
+
+        historial.innerHTML = "";
+
+
+        pagos.forEach(pago => {
+
+            historial.innerHTML += `
+
+            <div class="pago">
+
+                <strong>${pago.concepto}</strong><br>
+
+                Año: ${pago.año}<br>
+
+                Estado:
+                ${pago.estado}<br>
+
+                Fecha:
+                ${pago.fecha || "-"}
+
+            </div>
+
+            <hr>
+
+            `;
+
+        });
+
+
+    });
+
+}    
 });
