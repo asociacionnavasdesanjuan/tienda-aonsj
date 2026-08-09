@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         const socio = socios.find(s => s.numero === numero);
-
+        
+console.log("SOCIO EN FICHA:", socio);
 
 
         if(!socio){
