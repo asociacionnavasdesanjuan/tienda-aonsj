@@ -21,7 +21,31 @@ function pagoConfirmado(datosPago){
         importe: 20,
         referencia: "XXXX"
     }
+// =====================================
+// ACTUALIZAR CUOTA DEL SOCIO
+// =====================================
 
+function actualizarCuotaSocio(socio, año){
+
+    if(!socio.cuotas){
+
+        socio.cuotas = {};
+
+    }
+
+
+    socio.cuotas[año] = "PAGADA";
+
+
+    console.log(
+        "CUOTA ACTUALIZADA:",
+        socio
+    );
+
+
+    return socio;
+
+}
     */
 
 
