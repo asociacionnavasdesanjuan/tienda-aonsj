@@ -20,6 +20,7 @@ console.log("SOCIO CARGADO:", socio);
     document.getElementById("cp").value = socio.cp || "";
     document.getElementById("poblacion").value = socio.poblacion || "";
     document.getElementById("provincia").value = socio.provincia || "";
+    
 const añoActual = new Date().getFullYear();
 
 let estadoCuota = "";
@@ -34,7 +35,6 @@ if (socio.cuotas) {
 
 }
 
-
 document.getElementById("cuota").value = estadoCuota;
     // ===============================
 // ESTADO DEL SOCIO
@@ -44,7 +44,7 @@ const estadoSocio = document.getElementById("estadoSocio");
 const serviciosSocio = document.getElementById("serviciosSocio");
 
 
-if (socio.cuota === "PAGADA") {
+if (estadoCuota === "PAGADA") {
 
 
     estadoSocio.textContent =
