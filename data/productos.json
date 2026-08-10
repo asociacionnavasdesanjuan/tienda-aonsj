@@ -6,7 +6,7 @@
     "descripcion": "Jaula de cría de 60 cm con separador central.",
     "precio": 22.00,
      "stock": 20,
-    "imagen": "imagenes/jaula cria rsl 60cm.webp",
+    "imagen": "imagenes/jaula cria rsl 60cm.jpg",
     "nuevo": true,
     "oferta": false
   },
@@ -17,7 +17,7 @@
     "descripcion": "Comedero transparente de gran capacidad.",
     "precio": 0.40,
      "stock": 12,
-    "imagen": "imagenes/comedero exterior tapa roja.webp",
+    "imagen": "imagenes/comedero exterior tapa roja.jpg",
     "nuevo": false,
     "oferta": true
   },
